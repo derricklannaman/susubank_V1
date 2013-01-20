@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120194730) do
+ActiveRecord::Schema.define(:version => 20130120210535) do
 
   create_table "bankers", :force => true do |t|
     t.string   "first_name"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(:version => 20130120194730) do
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "goals", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.decimal  "goal_amount"
+    t.integer  "member_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "members", :force => true do |t|
@@ -39,6 +48,13 @@ ActiveRecord::Schema.define(:version => 20130120194730) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "members_susus", :id => false, :force => true do |t|
+    t.integer "member_id"
+    t.integer "susu_id"
+  end
+
+  add_index "members_susus", ["member_id", "susu_id"], :name => "index_members_susus_on_member_id_and_susu_id"
+
   create_table "susus", :force => true do |t|
     t.string   "name"
     t.integer  "num_of_members"
@@ -48,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130120194730) do
     t.decimal  "pay_out_amount"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "banker_id"
   end
 
 end
