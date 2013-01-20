@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   def how_it_works
   end
 
-  def susu_101
+  def susu101
   end
 
   def about

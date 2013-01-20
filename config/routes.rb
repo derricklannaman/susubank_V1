@@ -1,10 +1,11 @@
 Susubank::Application.routes.draw do
 
-
-
-
   root :to => 'home#index'
 
+  #loops thru static pages
+  %w(how_it_works susu101 about).each do |page|
+    get page, controller: 'home', action: page
+  end
 
 
   # The priority is based upon order of creation:
