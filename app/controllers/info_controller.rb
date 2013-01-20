@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class InfoController < ApplicationController
 # static pages
   def index
   end
