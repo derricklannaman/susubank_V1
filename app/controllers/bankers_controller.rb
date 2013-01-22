@@ -11,14 +11,14 @@ class BankersController < ApplicationController
   def create
     @banker = Banker.new(params[:banker])
     if @banker.save
-      redirect_to dashboard_path, confirm: "Banker successfully added"
+      redirect_to @banker, notice: "Banker successfully added"
     else
       render :new
     end
   end
 
   def show
-    # @banker = Banker.find(params[:id])
+    @banker = Banker.find(params[:id])
   end
 
   def edit

@@ -22,6 +22,10 @@ group :development do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
 
 group :assets do
@@ -30,3 +34,4 @@ group :assets do
   gem 'jquery-ui-rails'
   gem 'uglifier', '>= 1.0.3'
 end
+

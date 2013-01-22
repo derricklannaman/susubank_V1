@@ -7,7 +7,7 @@ Susubank::Application.routes.draw do
     get page, controller: 'info', action: page
   end
 
-  match '/dashboard' => 'bankers#dashboard', :via => :get
+  # get '/dashboard/:id' => 'banker#show', :as => "dashboard"
   resources :bankers
 
 
