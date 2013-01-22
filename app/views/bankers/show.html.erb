@@ -2,4 +2,7 @@
 
 <p><%= "Welcome #{@banker.first_name.downcase.capitalize} #{@banker.last_name.downcase.capitalize}"%></p>
 
+<%= link_to "edit my profile", edit_banker_path(@banker) %>
+<%= link_to "delete my profile", @banker, :method => :delete %>
+
 

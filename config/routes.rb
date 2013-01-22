@@ -8,7 +8,9 @@ Susubank::Application.routes.draw do
   end
 
   # get '/dashboard/:id' => 'banker#show', :as => "dashboard"
-  resources :bankers
+  resources :bankers do
+    resources :susus
+  end
 
 
 

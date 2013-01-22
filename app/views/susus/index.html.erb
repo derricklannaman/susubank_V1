@@ -1,0 +1,13 @@
+<% @susus.each do |susu| %>
+  Name:
+  <%= susu.name %>
+  # of Members:
+  <%= susu.length %>
+  pay_out_rotation:
+
+  Member contributions:
+  <%= susu.pay_in_amount %>
+  Member pay out:
+  <%= susu.pay_out_amount %>
+
+<% end %>
