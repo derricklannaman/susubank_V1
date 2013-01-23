@@ -11,7 +11,7 @@ class BankersController < ApplicationController
   def create
     @banker = Banker.new(params[:banker])
     if @banker.save
-      flash[:notice] = "Banker successfully added"
+      flash[:notice] = "Banker account successfully created."
       redirect_to @banker
     else
       render :new
@@ -34,8 +34,7 @@ class BankersController < ApplicationController
 
   def destroy
     Banker.find(params[:id]).destroy
-      flash[:notice] = "Are you sure you want to delete this account.
-                   All info will be permenantly lost!"
+      flash[:notice] = "Account deleted."
       redirect_to root_path
   end
 

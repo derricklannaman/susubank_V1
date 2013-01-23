@@ -1,5 +1,26 @@
-<h1>All Bankers list</h1>
+<h1>All Bankers list - Admin Controls</h1>
 
+<table>
+    <tr>
+      <th>First Name </th>
+      <th>Last Name </th>
+      <th>Email </th>
+      <th>Actions</th>
+    </tr>
 <% @bankers.each do |banker| %>
-    <%= banker.first_name %>
+
+   <tr>
+    <td><%= banker.first_name %></td>
+    <td><%= banker.last_name %></td>
+    <td><%= banker.banker_email %></td>
+      <td>
+        <%= link_to "edit", edit_banker_path(banker) %>
+        <%= link_to "show", banker %>
+        <%= link_to "delete", banker %>
+      </td>
+   </tr>
+
 <% end %>
+
+
+</table>

@@ -5,7 +5,8 @@ class SususController < ApplicationController
   end
 
   def new
-    @susu = Susu.new
+    @banker = Banker.find(params[:id])
+    @susu = @banker.susu.new
   end
 
   def create
@@ -36,6 +37,9 @@ class SususController < ApplicationController
       redirect_to @banker, notice: "destroy this susu?"
   end
 
+  def susu_builder
+    # @banker = Banker.find
+  end
 
 
 end

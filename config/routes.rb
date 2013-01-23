@@ -7,6 +7,8 @@ Susubank::Application.routes.draw do
     get page, controller: 'info', action: page
   end
 
+  # match '/susubuilder', to: 'susus#susu_builder', :via => :get
+
   # get '/dashboard/:id' => 'banker#show', :as => "dashboard"
   resources :bankers do
     resources :susus
