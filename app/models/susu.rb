@@ -11,12 +11,10 @@
 #  pay_out_amount   :decimal(, )
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
-#  banker_id        :integer
 #
 
 class Susu < ActiveRecord::Base
 
-
-  has_many :members
   belongs_to :banker
+  has_and_belongs_to_many :members
 end

@@ -36,4 +36,6 @@ class SususController < ApplicationController
       redirect_to @banker, notice: "destroy this susu?"
   end
 
+
+
 end

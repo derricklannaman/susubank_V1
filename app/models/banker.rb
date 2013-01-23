@@ -10,6 +10,7 @@
 #  password_digest :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  password        :string(255)
 #
 
 class Banker < ActiveRecord::Base
