@@ -1,0 +1,35 @@
+<%= form_for([@banker, @susu]) do |f| %>
+
+  <div>
+    <%= f.label :name, "Name your susu" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :pay_out_amount, "Enter desired \"hand\": $" %>
+    <%= f.text_field :pay_out_amount %>
+  </div>
+  <div>
+    <%= f.label :num_of_members, "Number of members" %>
+    <%= f.number_field :num_of_members %>
+  </div>
+  <div>
+    <%= f.label :pay_out_rotation, "Enter payout frequency" %>
+    <%= f.select(:pay_out_rotation, options_for_select([['weekly', 1],['every 2 weeks', 2], ['monthly', 3]])) %>
+  </div>
+  <div>
+    <%= f.label :pay_in_amount %>
+    <%= f.text_field :pay_in_amount %>
+  </div>
+  <div>
+    <%= f.label :length, "Length of susu" %>
+    <%= f.text_field :length %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+
+
+

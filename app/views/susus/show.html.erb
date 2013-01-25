@@ -1,1 +1,31 @@
 <h1>Show susu</h1>
+
+<%= link_to "back to dashboard", banker_path(@banker) %><br/>
+<%= link_to "edit susu info", edit_banker_susu_path(@banker, @susu) %><br/>
+<%= link_to "back to all susus", banker_susus_path(@banker) %><br/>
+
+  <fieldset>
+    <div>
+     <p>Susu name: <%= @susu.name %></p>
+    </div>
+    <div>
+     <p># of members: <%= @susu.num_of_members %></p>
+    </div>
+    <div>
+     <p>Total member payout: <%= @susu.pay_out_amount %></p>
+    </div>
+    <div>
+     <p>Pay out frequency: <%= @susu.pay_out_rotation %></p>
+    </div>
+    <div>
+     <p>Contribution amount: <%= @susu.pay_in_amount %></p>
+    </div>
+    <div>
+     <p>Length: <%= @susu.length %></p>
+    </div>
+  </fieldset>
+
+
+
+
+
