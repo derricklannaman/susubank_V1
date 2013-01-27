@@ -11,6 +11,7 @@
 #  pay_out_amount   :decimal(, )
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  banker_id        :integer
 #
 
 class Susu < ActiveRecord::Base

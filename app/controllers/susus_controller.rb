@@ -50,4 +50,5 @@ class SususController < ApplicationController
   end
 
 
+
 end
