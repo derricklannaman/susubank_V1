@@ -1,5 +1,7 @@
 Susubank::Application.routes.draw do
 
+  get "sessions/new"
+
   root to: 'info#index'
 
   #loops thru info pages in home controller

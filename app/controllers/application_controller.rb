@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def authenticated_user
+  def authenticate_user
     if session[:user_id]
       @authenticated_user = Banker.find(session[:user_id])
     else
