@@ -1,8 +1,10 @@
 Susubank::Application.routes.draw do
 
-  get "sessions/new"
-
   root to: 'info#index'
+
+  get   '/signin'   => 'sessions#new'
+  post  '/signin'   => 'sessions#create'
+  get   '/signout'  => 'sessions#destroy'
 
   #loops thru info pages in home controller
   %w(how_it_works susu101 about).each do |page|
