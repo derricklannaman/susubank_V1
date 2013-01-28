@@ -7,17 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <%= render "shared/nav" %>
+ <div class="container">
+  <%= render "shared/nav" %>
 
-    <% if flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
-    <% end %>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 
   <div id="content">
-    <%= yield %>
+   <%= yield %>
   </div>
 
-    <%= render "shared/footer" %>
-
+  <%= render "shared/footer" %>
+ </div>
 </body>
 </html>
