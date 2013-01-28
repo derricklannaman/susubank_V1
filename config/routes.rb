@@ -15,6 +15,10 @@ Susubank::Application.routes.draw do
     resources :susus
   end
 
+  resources :susus do
+    resources :members
+  end
+
   # resources :bankers, :susus
 
 

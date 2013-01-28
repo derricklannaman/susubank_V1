@@ -1,22 +1,15 @@
 class SususController < ApplicationController
 
   def index
-    # @susus = Susu.all
-    # @banker = Banker.find(params[:banker_id])
     @susus = @authenticated_user.susus.all
   end
 
   def new
-    # @banker = Banker.find(params[:banker_id])
-    # @susu = Susu.new
     @susu = @authenticated_user.susus.new
   end
 
 
   def create
-    # @susu = Susu.new(params[:id])
-
-    # @banker = Banker.find(params[:banker_id])
     @susu = @authenticated_user.susus.new(params[:susu])
     if @susu.save
       flash[:notice] = "Susu created!"
