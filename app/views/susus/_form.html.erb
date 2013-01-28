@@ -14,7 +14,7 @@
   </div>
   <div>
     <%= f.label :pay_out_rotation, "Enter payout frequency" %>
-    <%= f.select(:pay_out_rotation, options_for_select([['weekly', 1],['every 2 weeks', 2], ['monthly', 3]])) %>
+    <%= f.select(:pay_out_rotation, options_for_select([['weekly', "weekly"],['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
   </div>
   <div>
     <%= f.label :pay_in_amount %>
@@ -29,6 +29,7 @@
   </div>
 
 <% end %>
+
 
 
 
