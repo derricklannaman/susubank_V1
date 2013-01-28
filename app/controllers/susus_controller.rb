@@ -1,14 +1,17 @@
 class SususController < ApplicationController
 
   def index
-    @susus = Susu.all
-    @banker = Banker.find(params[:banker_id])
+    # @susus = Susu.all
+    # @banker = Banker.find(params[:banker_id])
+    @susus = @authenticated_user.susus.all
   end
 
   def new
-    @banker = Banker.find(params[:banker_id])
-    @susu = Susu.new
+    # @banker = Banker.find(params[:banker_id])
+    # @susu = Susu.new
+    @susu = @authenticated_user.susus.new
   end
+
 
   def create
     # @susu = Susu.new(params[:id])
@@ -46,7 +49,7 @@ class SususController < ApplicationController
     @banker = Banker.find(params[:banker_id])
 
     Susu.find(params[:id]).destroy
-      redirect_to @banker, notice: "destroy this susu?"
+      redirect_to @banker, notice: "susu deleted"
   end
 
 
