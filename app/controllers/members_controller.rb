@@ -11,7 +11,7 @@ class MembersController < ApplicationController
 
   def create
     @susu = Susu.find(params[:susu_id])
-    @member = @susu.members.new(params[:members])
+    @member = Member.new(params[:member])
       if @member.save
         redirect_to susu_member_path(@susu, @member), notice: "New member added."
       else

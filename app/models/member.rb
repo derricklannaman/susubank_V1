@@ -16,10 +16,10 @@
 #  password_digest :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  susu_id         :integer
 #
 
 class Member < ActiveRecord::Base
-
 
   has_and_belongs_to_many :susus
 end

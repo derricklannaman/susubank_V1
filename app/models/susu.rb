@@ -17,5 +17,5 @@
 class Susu < ActiveRecord::Base
 
   belongs_to :banker
-  has_and_belongs_to_many :members
+  has_many :members
 end

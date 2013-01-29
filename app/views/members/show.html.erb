@@ -1,5 +1,10 @@
 <h1>show member</h1>
 
+<%= link_to "<< back to susu", banker_susu_path(@authenticated_user, @susu) %><br/>
+<%#= link_to "edit member info", edit_susu_member_path(@susu, @member) %><br/>
+<%= link_to "edit member info", edit_susu_member_path(@susu, @member) %><br/>
+
+<div class="form">
   <div>
    <p>first name: <%= @member.first_name %></p>
   </div>
@@ -18,3 +23,16 @@
   <div>
    <p>zip: <%= @member.zip %></p>
   </div>
+  <div>
+   <p>home: <%= @member.home_phone %></p>
+  </div>
+  <div>
+   <p>cell: <%= @member.cell_phone %></p>
+  </div>
+  <div>
+   <p>email: <%= @member.member_email %></p>
+  </div>
+</div>
+
+
+

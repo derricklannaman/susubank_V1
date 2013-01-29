@@ -6,29 +6,29 @@
 
   <fieldset>
     <div>
-     <p>Susu name: <%= @susu.name %></p>
+     <p>Name: <%= @susu.name %></p>
     </div>
     <div>
-     <p># of members: <%= @susu.num_of_members %></p>
+     <p>Members: <%= @susu.num_of_members %></p>
     </div>
     <div>
-     <p>Total member payout: <%= @susu.pay_out_amount %></p>
+     <p>Total member payout: <%= number_to_currency(@susu.pay_out_amount) %></p>
     </div>
     <div>
      <p>Pay out frequency: <%= @susu.pay_out_rotation %></p>
     </div>
     <div>
-     <p>Contribution amount: <%= @susu.pay_in_amount %></p>
+     <p>Contribution amount: <%= number_to_currency(@susu.pay_in_amount) %></p>
     </div>
     <div>
-     <p>Length: <%= @susu.length %></p>
+     <p>Susu Duration: <%= "#{@susu.length} weeks" %></p>
     </div>
   </fieldset>
 
-<%= link_to "add member", new_susu_member_path(@susu) %>
-<%#= link_to "edit member", edit_susu_member_path(@susu, @member) %>
-<%#= link_to "add member", new_susu_member_path(@susu) %>
-<%#= link_to "add member", new_susu_member_path(@susu) %>
+<%= link_to "add member", new_susu_member_path(@susu) %><br/>
+<%= link_to "edit member", "#" %><br/>
+<%= link_to " member", "#" %><br/>
+<%= link_to "delete member", "#" %><br/>
 
 
 
