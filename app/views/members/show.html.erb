@@ -1,9 +1,8 @@
 <h1>show member</h1>
 
-<%= link_to "<< back to susu", banker_susu_path(@authenticated_user, @susu) %><br/>
-<%#= link_to "edit member info", edit_susu_member_path(@susu, @member) %><br/>
-<%= link_to "edit member info", edit_susu_member_path(@susu, @member) %><br/>
-
+<button>
+<%= link_to "<< back to susu", banker_susu_path(@authenticated_user, @susu) %>
+</button><br/>
 <div class="form">
   <div>
    <p>first name: <%= @member.first_name %></p>
@@ -32,6 +31,7 @@
   <div>
    <p>email: <%= @member.member_email %></p>
   </div>
+
 </div>
 
 

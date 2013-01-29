@@ -1,6 +1,7 @@
 class MembersController < ApplicationController
 
   def index
+    @susu = Susu.find(params[:susu_id])
     @members = Member.all
   end
 
@@ -30,6 +31,18 @@ class MembersController < ApplicationController
     @susu = Susu.find(params[:susu_id])
   end
 
+  def update
+    @susu = Susu.find(params[:susu_id])
+    @member = Member.find(params[:id])
+    @member.update_attributes(params[:member])
+      redirect_to susu_members_path(@susu), notice: "Member updated."
+  end
+
+  def destroy
+    @susu = Susu.find(params[:susu_id])
+    @member = Member.find(params[:id]).destroy
+      redirect_to susu_members_path(@susu), notice: "Member deleted"
+  end
 
 
 end

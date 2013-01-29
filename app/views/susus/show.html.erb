@@ -1,8 +1,8 @@
 <h1>Show susu</h1>
 
-<%= link_to "back to dashboard", banker_path(@banker) %><br/>
-<%= link_to "edit susu info", edit_banker_susu_path(@banker, @susu) %><br/>
-<%= link_to "my susus", banker_susus_path(@banker) %><br/>
+<button><%= link_to "back to dashboard", banker_path(@banker) %></button><br/>
+<button><%= link_to "edit susu info", edit_banker_susu_path(@banker, @susu) %></button><br/>
+<button><%= link_to "my susus", banker_susus_path(@banker) %></button><br/>
 
   <fieldset>
     <div>
@@ -25,10 +25,10 @@
     </div>
   </fieldset>
 
-<%= link_to "add member", new_susu_member_path(@susu) %><br/>
-<%= link_to "edit member", "#" %><br/>
-<%= link_to " member", "#" %><br/>
-<%= link_to "delete member", "#" %><br/>
+<button><%= link_to "add member", new_susu_member_path(@susu) %></button><br/>
+<button><%= link_to "view members", susu_members_path(@susu) %></button><br/>
+<button><%= link_to "update member info", susu_members_path(@susu) %></button><br/>
+<button><%= link_to "delete member", susu_members_path(@susu) %></button><br/>
 
 
 

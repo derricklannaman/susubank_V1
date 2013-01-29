@@ -21,11 +21,13 @@ class SususController < ApplicationController
   end
 
   def show
+    # @member = Member.find(params[:id])
     @susu = Susu.find(params[:id])
     @banker = @authenticated_user
   end
 
   def edit
+    # @member = Member.find(params[:id])
     @susu = Susu.find(params[:id])
     @banker = @authenticated_user
   end

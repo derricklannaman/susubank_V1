@@ -19,7 +19,8 @@ Susubank::Application.routes.draw do
     resources :members
   end
 
-  # resources :bankers, :susus
+  # resources :members
+
 
 
 
