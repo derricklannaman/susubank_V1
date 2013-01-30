@@ -1,7 +1,7 @@
 <h1>susuBuilder</h1>
 <p>Use susubuilder to experiment with putting your susu together.</p>
 
-<%= link_to "back to dashboard", @banker %>
+<%= link_to "back to dashboard", banker_path(@authenticated_user) %>
 
 <fieldset>
     <%= render "form" %>

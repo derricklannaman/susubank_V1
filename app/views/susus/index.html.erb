@@ -3,11 +3,11 @@
 <table>
     <tr>
       <th>Name </th>
-      <th># of Members: </th>
+      <th>Members: </th>
       <th>Pay out: </th>
       <th>Member contributions:</th>
-      <th>Paid out every:</th>
-      <th>contributions </th>
+      <th>Paid out:</th>
+      <th>Duration: </th>
       <th>Actions</th>
     </tr>
 <% @susus.each do |susu| %>
@@ -15,10 +15,10 @@
    <tr>
     <td><%= susu.name %></td>
     <td><%= susu.num_of_members %></td>
-    <td><%= susu.pay_out_amount %></td>
-    <td><%= susu.pay_in_amount %></td>
-    <td><%= susu.pay_out_amount %></td>
-    <td><%= susu.pay_in_amount %></td>
+    <td><%= number_to_currency(susu.pay_out_amount) %></td>
+    <td><%= number_to_currency(susu.pay_in_amount) %></td>
+    <td><%= susu.pay_out_rotation %></td>
+    <td><%= susu.length %></td>
       <td>
         <%= link_to "edit", edit_banker_susu_path(@authenticated_user, susu) %>
         <%= link_to "show", banker_susu_path(@authenticated_user, susu)%>

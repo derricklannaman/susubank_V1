@@ -5,6 +5,7 @@ class SususController < ApplicationController
   end
 
   def new
+    @banker = Banker.find(params[:banker_id])
     @susu = @authenticated_user.susus.new
   end
 

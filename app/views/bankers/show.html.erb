@@ -10,6 +10,6 @@ Create your susu with susuBuilder:</br>
 <%= link_to "view all susus", banker_susus_path(@banker) %><br/>
 
 <%= link_to "edit my profile", edit_banker_path(@banker) %><br/>
-<%= link_to "cancel account", @banker, :method => :delete %><br/>
+<%= link_to "cancel account", banker_path(@banker), :method => :delete, data: {confirm: "Are you sure?"} %><br/>
 
 

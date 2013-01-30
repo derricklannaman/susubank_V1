@@ -20,6 +20,7 @@ class BankersController < ApplicationController
 
   def show
     @banker = Banker.find(params[:id])
+    @authenticated_user = @banker
   end
 
   def edit
@@ -33,7 +34,7 @@ class BankersController < ApplicationController
   end
 
   def destroy
-    Banker.find(params[:id]).destroy
+    @banker = Banker.find(params[:id]).destroy
       flash[:notice] = "Account deleted."
       redirect_to root_path
   end
