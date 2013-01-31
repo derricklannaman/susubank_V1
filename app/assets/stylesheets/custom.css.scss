@@ -1,0 +1,24 @@
+/*SITE WIDE STYLING*/
+
+/*GENERAL*/
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+/*FOOTER*/
+
+.footer, .push {
+  padding-top: 40px;
+  background-color: #DDD;
+  height: 10em;
+  clear:  both;
+}
+
+
