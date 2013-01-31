@@ -26,7 +26,7 @@
   </fieldset>
 
 <button><%= link_to "add member", new_susu_member_path(@susu) %></button><br/>
-<button><%= link_to "view members", susu_members_path(@susu) %></button><br/>
+<button><%= link_to "view members", susu_members_path(@susu, @members) %></button><br/>
 <button><%= link_to "update member info", susu_members_path(@susu) %></button><br/>
 <button><%= link_to "delete member", susu_members_path(@susu) %></button><br/>
 

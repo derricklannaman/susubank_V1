@@ -21,5 +21,6 @@
 
 class Member < ActiveRecord::Base
 
-  has_and_belongs_to_many :susus
+  has_many :susus
+  belongs_to :susu
 end

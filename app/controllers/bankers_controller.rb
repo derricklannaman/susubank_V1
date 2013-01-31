@@ -20,7 +20,7 @@ class BankersController < ApplicationController
 
   def show
     @banker = Banker.find(params[:id])
-    @authenticated_user = @banker
+    # @authenticated_user = @banker
   end
 
   def edit
