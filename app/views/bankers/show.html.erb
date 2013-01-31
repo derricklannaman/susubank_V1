@@ -1,3 +1,8 @@
+<div class="intro_bar">
+  <h1>Dashboard</h1>
+  <p><%= "Welcome #{@banker.first_name} #{@banker.last_name}"%></p>
+</div>
+
 <div class="banker_nav_panel">
   <ul>
     <li><%= link_to "Susu Builder", new_banker_susu_path(@banker) %></li>
@@ -8,10 +13,7 @@
 </div>
 
 <div class="main_dashboard_container">
-  <div class="intro_bar">
-    <h1>Dashboard</h1>
-    <p><%= "Welcome #{@banker.first_name} #{@banker.last_name}"%></p>
-  </div>
+
 
 </div>
 

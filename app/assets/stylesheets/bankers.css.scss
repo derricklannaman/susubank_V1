@@ -2,25 +2,38 @@
 
 /*Banker Control/Navigation*/
 
+/*Vertical side panel*/
 .banker_nav_panel {
   float:  left;
   width:  200px;
-  height: 200px;
-  border: 2px solid #666;
+  background: #EEE;
+  height: 500px;
+  border: 2px solid #999;
+  border-top: none;
   ul{
     margin: 4px;
+    padding-top: 20px;
   }
     li {
-      display: block;
       font-size: 20px;
       margin: 4px 4px;
-      padding:  10px 0px 10px 20px;
       list-style-type: none;
-      text-decoration: none;
       border: 1px solid #999;
+      background: #FFF;
+      }
+      a {
+      display: block;
+      text-decoration: none;
+      padding:  10px 10px;
+      text-align: center;
       }
 }
 
 .intro_bar {
-  margin-left: 370px;
+  border: 2px solid #999;
+  margin-left: 0px;
+  margin-top: -25px;
+  text-align: center;
+  background: #EEE;
+  color:  #999;
 }
