@@ -1,15 +1,19 @@
-<h1>Banker Dashboard</h1>
-
-<p><%= "Welcome #{@banker.first_name} #{@banker.last_name}"%></p>
-
-<div>
-Create your susu with susuBuilder:</br>
-  <%= link_to "Susu Builder", new_banker_susu_path(@banker) %></br>
+<div class="banker_nav_panel">
+  <ul>
+    <li><%= link_to "Susu Builder", new_banker_susu_path(@banker) %></li>
+    <li><%= link_to "view all susus", banker_susus_path(@banker) %></li>
+    <li><%= link_to "edit my profile", edit_banker_path(@banker) %></li>
+    <li><%= link_to "cancel account", banker_path(@banker), :method => :delete, data: {confirm: "Are you sure?"} %></li>
+  </ul>
 </div>
 
-<%= link_to "view all susus", banker_susus_path(@banker) %><br/>
+<div class="main_dashboard_container">
+  <div class="intro_bar">
+    <h1>Dashboard</h1>
+    <p><%= "Welcome #{@banker.first_name} #{@banker.last_name}"%></p>
+  </div>
 
-<%= link_to "edit my profile", edit_banker_path(@banker) %><br/>
-<%= link_to "cancel account", banker_path(@banker), :method => :delete, data: {confirm: "Are you sure?"} %><br/>
+</div>
+
 
 
