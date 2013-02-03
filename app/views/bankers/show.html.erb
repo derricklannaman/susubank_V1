@@ -24,7 +24,7 @@
   <%= form_tag "/susubuilder", id: "susu_form", :remote => true do %>
 
   <div class="form_field_group">
-    <label for="name">Name your susu:</label>
+    <label for="name">Give your susu a nickname:</label>
     <%= text_field_tag 'name' %>
     <div>
       Total payout<br/>
@@ -36,11 +36,11 @@
     </div>
     <div>
       Pay out frequency:<br/>
-      <%= select_tag(options_for_select([['weekly', "weekly"], ['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
+      <%= select_tag 'pay_out_freq', (options_for_select([ ['weekly', "weekly"], ['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"] ])) %>
     </div>
     <div>
       Members pay in:<br/>
-      <%= select_tag(options_for_select([['weekly', "weekly"], ['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
+      <%= select_tag 'pay_in_freq', (options_for_select([['weekly', "weekly"], ['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
     </div>
     <div>
       Member contribution (calculate automatically)<br/>

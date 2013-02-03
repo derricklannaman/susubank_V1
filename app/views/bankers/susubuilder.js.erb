@@ -1,8 +1,8 @@
 $('#calculations').empty();
 $('#calculations').append('<div class="box"><%= "Your susu, #{@susu_name}  \
                     will pay out $#{@total_hand} to each member, on a \
-                    (#add payout frequency). All #{@members} members of the \
+                    #{@pay_out_frequency} basis. All #{@members} members of the \
                     group will contribute $#{@member_contribution} \
-                     (#add contribution frequency). The duration of the susu \
+                     #{@pay_in_frequency}. The duration of the susu \
                      will be #{@duration} weeks." %></div>');
 

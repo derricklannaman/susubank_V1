@@ -44,6 +44,8 @@ class BankersController < ApplicationController
     @susu_name = params[:name]
     @total_hand = params[:pay_out]
     @members = params[:num_of_members]
+    @pay_out_frequency = params[:pay_out_freq]
+    @pay_in_frequency = params[:pay_in_freq]
 
     @member_contribution = params[:member_contribution]
     @duration = params[:duration]
