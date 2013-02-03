@@ -2,6 +2,7 @@ Susubank::Application.routes.draw do
 
   root to: 'info#index'
 
+  # sessions
   get   '/signin'   => 'sessions#new'
   post  '/signin'   => 'sessions#create'
   get   '/signout'  => 'sessions#destroy'
@@ -11,7 +12,15 @@ Susubank::Application.routes.draw do
     get page, controller: 'info', action: page
   end
 
+  # post '/susubuilder' => 'susus#calculate'
+  post '/susubuilder' => 'bankers#susubuilder'
+
+
+
   resources :bankers do
+    # member do
+    #   match '/susubuilder' => 'bankers#susu_builder', :via => :post
+    # end
     resources :susus
   end
 
@@ -19,7 +28,6 @@ Susubank::Application.routes.draw do
     resources :members
   end
 
-  # resources :members
 
 
 

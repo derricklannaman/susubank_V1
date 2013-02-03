@@ -20,6 +20,7 @@ class BankersController < ApplicationController
 
   def show
     @banker = Banker.find(params[:id])
+    @susus = Susu.all
     # @authenticated_user = @banker
   end
 
@@ -37,6 +38,16 @@ class BankersController < ApplicationController
     @banker = Banker.find(params[:id]).destroy
       flash[:notice] = "Account deleted."
       redirect_to root_path
+  end
+
+  def susubuilder
+    @susu_name = params[:name]
+    @total_hand = params[:pay_out]
+    @members = params[:num_of_members]
+
+    @member_contribution = params[:member_contribution]
+    @duration = params[:duration]
+    # @susu_name = params[:name]
   end
 
 end

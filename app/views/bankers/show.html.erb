@@ -5,19 +5,68 @@
 
 <div class="banker_nav_panel">
   <ul>
-    <li><%= link_to "+ Susu", '#' %></li>
-    <li><%= link_to "Susu Builder", new_banker_susu_path(@banker) %></li>
+    <li><input type="button", id="builder_button", value="Susu Calculator" /></li>
+    <li><%= link_to "Create Susu", new_banker_susu_path(@banker) %></li>
     <li><%= link_to "view all susus", banker_susus_path(@banker) %></li>
     <li><%= link_to "edit my profile", edit_banker_path(@banker) %></li>
     <li><%= link_to "cancel account", banker_path(@banker), :method => :delete, data: {confirm: "Are you sure?"} %></li>
   </ul>
 </div>
 
+<div class="all_susu_panel">
+  <%= render 'susus/susus' %>
+</div><!-- End all_susu_panel -->
 
-<div class="main_dashboard_container">
 
+<!-- <div class="main_dashboard_container"> -->
 
+<!-- <div id="susu_builde_form"> -->
+  <%#= form_tag "/susubuilder", id: "susu_form", :remote => true do %>
+
+<!--   <div class="form_field_group">
+    <label for="name">Name your susu:</label>
+    <%#= text_field_tag 'name' %>
+    <div>
+      Total payout<br/>
+      <%#= text_field_tag 'pay_out' %>
+    </div>
+    <div>
+      Members:<br/>
+      <%#= number_field_tag 'num_of_members' %>
+    </div>
+    <div>
+      Pay out frequency:<br/>
+      <%#= select_tag(options_for_select([['weekly', "weekly"], ['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
+    </div>
+    <div>
+      Members pay in:<br/>
+      <%#= select_tag(options_for_select([['weekly', "weekly"], ['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
+    </div>
+    <div>
+      Member contribution (calculate automatically)<br/>
+      <%#= text_field_tag 'member_contribution' %>
+    </div>
+    <div>
+      Susu duration (calculate automatically)
+      <%#= text_field_tag 'duration' %>
+    </div>
+    <div>
+      <%#= submit_tag 'Calculate'  %>
+    </div>
+  </div> --><!-- End form_field_group
+  <%# end %>
 </div>
+
+<div id="calculations"></div>
+
+
+
+
+
+
+
+
+
 
 
 
