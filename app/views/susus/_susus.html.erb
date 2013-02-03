@@ -1,0 +1,19 @@
+<!-- SUSU INDEX PARTIAL RENDERING ON BANKERS BASHBOARD -->
+<% @susus.each do |susu| %>
+<div class="susu_box">
+  <ul>
+    <li><span><%= susu.name %></span></li>
+    <li>Members: <%= susu.num_of_members %></li>
+    <li>Payout: <%= number_to_currency(susu.pay_out_amount, :precision => 0) %></li>
+    <li>Contribution: <%= number_to_currency(susu.pay_in_amount, :precision => 0) %></li>
+    <li>Period: <%= susu.pay_out_rotation %></li>
+    <li>Duration: <%= susu.length %> weeks</li>
+    <li>
+      <%= link_to "edit", edit_banker_susu_path(@authenticated_user, susu) %>
+      <%= link_to "show", banker_susu_path(@authenticated_user, susu)%>
+      <%= link_to "delete", banker_susu_path(@authenticated_user, susu), method: :delete, data: {confirm: 'Delete this susu?'} %>
+    </li>
+  </ul>
+</div>
+
+<% end %>
