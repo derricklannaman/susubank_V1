@@ -6,6 +6,7 @@ module ApplicationHelper
     else
       link_to "Sign In", signin_path
     end
-
   end
+
+
 end

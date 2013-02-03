@@ -3,6 +3,7 @@ class SususController < ApplicationController
   def index
     @susus = Susu.all
     # @susus = @authenticated_user.susus
+    redirect_to @authenticated_user
   end
 
   def new
@@ -50,6 +51,8 @@ class SususController < ApplicationController
       redirect_to banker_path(@banker), notice: "susu deleted"
   end
 
+  def calculate
+  end
 
 
 end

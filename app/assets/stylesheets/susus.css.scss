@@ -1,0 +1,71 @@
+/* SUSU */
+
+/* SUSU BUILDER FORM */
+
+#susu_builder_form {
+  float:  left;
+  width: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 2px solid #EEE;
+}
+
+.form_field_group {
+  margin-top: 20px;
+  margin-left: 70px;
+}
+
+.box {
+  float:  left;
+  width:  240px;
+  min-height:  302px;
+  line-height: 1.2em;
+  border: 1px solid #EEE;
+  border-left: none;
+  margin-top: 20px;
+  font-size:  16px;
+}
+
+/* THE PANEL CONTAINING ALL THE SUSU FOR EACH BANKER */
+.all_susu_panel {
+  float:  left;
+  width:  450px;
+  min-height: 600px;
+  border: 1px solid #EEE;
+}
+
+/* INDIVIDUAL SUSU BOX */
+.susu_box {
+  float:  left;
+  width:  200px;
+  min-height:  120px;
+  line-height: 1.2em;
+  border: 1px solid #DDD;
+  margin: 5px;
+  padding: 2px;
+  font-size:  16px;
+  ul li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  span {
+    font-weight: bold;
+    border-bottom: 1px solid #CCC;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
