@@ -7,5 +7,6 @@ $(function(){
 
 
 function show_form() {
-  $('#susu_builder_form').show();
+  $('.all_susu_panel').hide(100);
+  $('#susu_builder_form').fadeIn(200);
 }
