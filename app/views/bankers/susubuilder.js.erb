@@ -1,8 +1,10 @@
 $('#calculations').empty();
-$('#calculations').append('<div class="box"><%= "Your susu, #{@susu_name}  \
-                    will pay out $#{@total_hand} to each member, on a \
-                    #{@pay_out_frequency} basis. All #{@members} members of the \
+$('#calculations').append('<div class="box"><%= "Your susu, * #{@susu_name} *  \
+                    will pay out $#{@total_hand} to each member,\
+                    #{@pay_out_frequency}. All #{@members} members of the \
                     group will contribute $#{@member_contribution} \
                      #{@pay_in_frequency}. The duration of the susu \
                      will be #{@duration} weeks." %></div>');
+
+// <%#= link_to "create", "#" %> place before closing div, if needed
 

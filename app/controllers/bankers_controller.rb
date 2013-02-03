@@ -41,6 +41,8 @@ class BankersController < ApplicationController
   end
 
   def susubuilder
+    # @banker = Banker.find(params[:id])
+
     @susu_name = params[:name]
     @total_hand = params[:pay_out]
     @members = params[:num_of_members]
@@ -49,7 +51,7 @@ class BankersController < ApplicationController
 
     @member_contribution = params[:member_contribution]
     @duration = params[:duration]
-    # @susu_name = params[:name]
+    @new_susu_path = "new_banker_susu_path(@authenticated_user)"
   end
 
 end
