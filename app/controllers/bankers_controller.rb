@@ -20,7 +20,9 @@ class BankersController < ApplicationController
 
   def show
     @banker = Banker.find(params[:id])
-    @susus = Susu.all
+    # @susus = Susu.order('created_at desc')
+    @susus = @authenticated_user.susus.order('created_at desc')
+
     # @authenticated_user = @banker
   end
 
@@ -41,17 +43,57 @@ class BankersController < ApplicationController
   end
 
   def susubuilder
-    # @banker = Banker.find(params[:id])
-
     @susu_name = params[:name]
-    @total_hand = params[:pay_out]
-    @members = params[:num_of_members]
+    @total_hand = params[:pay_out].to_i
+    @members = params[:num_of_members].to_i
     @pay_out_frequency = params[:pay_out_freq]
     @pay_in_frequency = params[:pay_in_freq]
 
     @member_contribution = params[:member_contribution]
-    @duration = params[:duration]
+
     @new_susu_path = "new_banker_susu_path(@authenticated_user)"
+
+    # CALCULATE MEMBER CONTRIBUTIONS
+    if @pay_in_frequency == "weekly"
+      @pay_in_amount = (@total_hand / @members).to_f
+    elsif @pay_in_frequency == "every 2 weeks"
+      @pay_in_amount = (@total_hand / @members) * 2
+      @pay_in_frequency = "every 2 weeks"
+    else
+      @pay_in_amount = (@total_hand / @members) * 4
+      @pay_in_frequency = "monthly"
+    end
+
+    # CALCULATE SUSU DURATION
+    if @pay_out_frequency == "weekly"
+      @duration = @members * 1
+    elsif @pay_out_frequency == "every 2 weeks"
+      @duration = @members * 2
+      @duration.to_f
+    else
+      @duration = @members * 4
+    end
+
+
+
+
+
   end
 
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

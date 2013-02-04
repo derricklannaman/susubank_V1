@@ -15,6 +15,7 @@ Susubank::Application.routes.draw do
   # post '/susubuilder' => 'susus#calculate'
   post '/susubuilder' => 'bankers#susubuilder'
 
+  match '/calc' => 'bankers#calculate_member_contribution'
 
 
   resources :bankers do

@@ -1,8 +1,8 @@
 class SususController < ApplicationController
 
   def index
-    # @susus = Susu.all
-    @susus = @authenticated_user.susus.all
+    @susus = Susu.order('created_at desc')
+    # @susus = @authenticated_user.susus.order('susus.name desc')
     redirect_to @authenticated_user
   end
 
