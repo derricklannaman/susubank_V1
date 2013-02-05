@@ -45,15 +45,17 @@
     <div>
       <%= submit_tag 'Calculate', id: 'calculate_button'   %>
     </div>
+
+    <div>
+      <button id="dashboard_create_susu_button" ><%= link_to "Create Susu", new_banker_susu_path(@banker), id: "dynamic_create_button" %>
+      </button>
+    </div>
   </div><!-- End form_field_group -->
   <% end %>
 </div>
 
 <div id="calculations"></div>
 
-<div>
-  <button id="dashboard_create_susu_button" ><%= link_to "Create Susu", new_banker_susu_path(@banker), id: "dynamic_create_button" %></button>
-</div>
 
 
 

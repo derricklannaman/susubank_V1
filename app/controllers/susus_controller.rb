@@ -1,25 +1,26 @@
 class SususController < ApplicationController
 
   def index
-    @susus = Susu.order('created_at desc')
-    # @susus = @authenticated_user.susus.order('susus.name desc')
+    # @susus = Susu.order('created_at desc')
+    @susus = @authenticated_user.susus.order('susus.name desc')
     redirect_to @authenticated_user
   end
 
   def new
+
     @banker = Banker.find(params[:banker_id])
-    # @susu = @authenticated_user.susus.new
     @susu = Susu.new
+
   end
 
 
   def create
     @susu = @authenticated_user.susus.new(params[:susu])
     if @susu.save
-      flash[:notice] = "Susu created!"
+      flash[:notice] = "The #{@susu.name} susu has been created"
       redirect_to banker_susu_path(@authenticated_user, @susu)
     else
-      flash[:error] = "Susu not created"
+      flash[:alert] = "Susu not created"
       render :new
     end
   end
@@ -33,7 +34,7 @@ class SususController < ApplicationController
   def edit
     # @member = Member.find(params[:id])
     @susu = Susu.find(params[:id])
-    @banker = @authenticated_user
+    @banker = Banker.find(params[:banker_id])
   end
 
   def update

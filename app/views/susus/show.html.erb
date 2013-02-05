@@ -1,10 +1,7 @@
+<%= render 'dashboard' %>
 <h1>Show susu</h1>
 
-<button><%= link_to "back to dashboard", banker_path(@banker) %></button><br/>
-<button><%= link_to "edit susu info", edit_banker_susu_path(@banker, @susu) %></button><br/>
-<button><%= link_to "my susus", banker_susus_path(@banker) %></button><br/>
-
-  <fieldset>
+  <div class="susu_box">
     <div>
      <p>Name: <%= @susu.name %></p>
     </div>
@@ -23,12 +20,8 @@
     <div>
      <p>Susu Duration: <%= "#{@susu.length} weeks" %></p>
     </div>
-  </fieldset>
+  </div>
 
-<button><%= link_to "add member", new_susu_member_path(@susu) %></button><br/>
-<button><%= link_to "view members", susu_members_path(@susu, @members) %></button><br/>
-<button><%= link_to "update member info", susu_members_path(@susu) %></button><br/>
-<button><%= link_to "delete member", susu_members_path(@susu) %></button><br/>
 
 
 

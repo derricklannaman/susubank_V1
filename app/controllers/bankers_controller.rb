@@ -20,10 +20,7 @@ class BankersController < ApplicationController
 
   def show
     @banker = Banker.find(params[:id])
-    # @susus = Susu.order('created_at desc')
     @susus = @authenticated_user.susus.order('created_at desc')
-
-    # @authenticated_user = @banker
   end
 
   def edit
@@ -43,6 +40,7 @@ class BankersController < ApplicationController
   end
 
   def susubuilder
+    @susubuilder =[]
     @susu_name = params[:name]
     @total_hand = params[:pay_out].to_i
     @members = params[:num_of_members].to_i
@@ -50,6 +48,9 @@ class BankersController < ApplicationController
     @pay_in_frequency = params[:pay_in_freq]
 
     @member_contribution = params[:member_contribution]
+
+    @susubuilder << @susu_name
+
 
     @new_susu_path = "new_banker_susu_path(@authenticated_user)"
 
