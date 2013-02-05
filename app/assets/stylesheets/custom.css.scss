@@ -1,6 +1,6 @@
-/*SITE WIDE STYLING*/
+/* SITE WIDE STYLING */
 
-/*GENERAL*/
+/* GENERAL */
 
 html, body {
   height: 100%;
@@ -12,7 +12,30 @@ html, body {
   height: 100%;
   margin: 0 auto -4em;
 }
-/*FOOTER*/
+
+/* FORMS */
+
+/* Controls the title bar within the forms */
+.title_bar {
+  background: #EEE;
+  margin-top: -11px;
+  :first-child {
+    margin-left:  235px;
+    }
+}
+
+.form {
+  float:  left;
+  min-width: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 2px solid #EEE;
+}
+
+
+
+
+/* FOOTER */
 
 .footer, .push {
   padding-top: 40px;

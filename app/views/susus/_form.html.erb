@@ -1,33 +1,37 @@
-<div class="new_susu_form ">
+<div class="form">
   <%= form_for([@authenticated_user, @susu]) do |f| %>
-
-    <div>
-      <%= f.label :name, "Name your susu" %>
-      <%= f.text_field :name %>
+    <div class="title_bar">
+      <h3>add susu</h3>
     </div>
-    <div>
-      <%= f.label :pay_out_amount, "Enter desired \"hand\": $" %>
-      <%= f.text_field :pay_out_amount %>
-    </div>
-    <div>
-      <%= f.label :num_of_members, "Number of members" %>
-      <%= f.number_field :num_of_members %>
-    </div>
-    <div>
-      <%= f.label :pay_out_rotation, "Enter payout frequency" %>
-      <%= f.select(:pay_out_rotation, options_for_select([['weekly', "weekly"],['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
-    </div>
-    <div>
-      <%= f.label :pay_in_amount %>
-      <%= f.text_field :pay_in_amount %>
-    </div>
-    <div>
-      <%= f.label :length, "Length of susu" %>
-      <%= f.text_field :length %>
-    </div>
-    <div>
-      <%= f.submit %>
-    </div>
+    <div class="form_field_group">
+      <div>
+        <%= f.label :name, "Name your susu" %>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :pay_out_amount, "Enter desired \"hand\": $" %>
+        <%= f.text_field :pay_out_amount %>
+      </div>
+      <div>
+        <%= f.label :num_of_members, "Number of members" %>
+        <%= f.number_field :num_of_members %>
+      </div>
+      <div>
+        <%= f.label :pay_out_rotation, "Enter payout frequency" %>
+        <%= f.select(:pay_out_rotation, options_for_select([['weekly', "weekly"],['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
+      </div>
+      <div>
+        <%= f.label :pay_in_amount %>
+        <%= f.text_field :pay_in_amount %>
+      </div>
+      <div>
+        <%= f.label :length, "Length of susu" %>
+        <%= f.text_field :length %>
+      </div>
+      <div>
+        <%= f.submit %>
+      </div>
+    </div><!-- End form_field_group -->
   <% end %>
 </div>
 

@@ -3,8 +3,8 @@ class MembersController < ApplicationController
   def index
     @susu = Susu.find(params[:susu_id])
     @members = Member.all
-    @members = @susu.members
-
+    # binding.pry
+      # redirect_to susu_members_path(@susu)
   end
 
   def new
@@ -26,7 +26,7 @@ class MembersController < ApplicationController
   def show
     @member = Member.find(params[:id])
     @susu = Susu.find(params[:susu_id])
-    # @susus = @authenticated_user.susus
+    @susus = @authenticated_user.susus
   end
 
   def edit

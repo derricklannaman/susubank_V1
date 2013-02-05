@@ -1,11 +1,11 @@
 <div class="intro_bar">
   <h1>Dashboard</h1>
-  <p><%= "Welcome #{@banker.first_name} #{@banker.last_name}"%></p>
+  <p><%= "Welcome #{@authenticated_user.first_name} #{@authenticated_user.last_name}"%></p>
 </div>
 
 <div class="banker_nav_panel">
   <ul>
-    <li><%= link_to "Dashboard", banker_susus_path(@banker) %></li>
+    <li><%= link_to "Dashboard", banker_path(@authenticated_user) %></li>
     <li><%= link_to "add member", new_susu_member_path(@susu) %></li>
     <li><%= link_to "view members", susu_members_path(@susu, @members) %></li>
     <li><%= link_to "edit members", susu_members_path(@susu) %></li>

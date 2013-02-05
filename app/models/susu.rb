@@ -12,7 +12,6 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  banker_id        :integer
-#  member_id        :integer
 #
 
 class Susu < ActiveRecord::Base

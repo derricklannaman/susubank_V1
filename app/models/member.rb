@@ -21,6 +21,6 @@
 
 class Member < ActiveRecord::Base
 
-  has_many :susus
+  has_many :goals
   belongs_to :susu
 end

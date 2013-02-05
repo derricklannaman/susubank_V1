@@ -1,7 +1,6 @@
 class SususController < ApplicationController
 
   def index
-    # @susus = Susu.order('created_at desc')
     @susus = @authenticated_user.susus.order('susus.name desc')
     redirect_to @authenticated_user
   end
@@ -26,13 +25,12 @@ class SususController < ApplicationController
   end
 
   def show
-    # @member = Member.find(params[:id])
     @susu = Susu.find(params[:id])
+    @members = Member.all
     @banker = @authenticated_user
   end
 
   def edit
-    # @member = Member.find(params[:id])
     @susu = Susu.find(params[:id])
     @banker = Banker.find(params[:banker_id])
   end

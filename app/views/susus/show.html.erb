@@ -1,10 +1,10 @@
-<%= render 'dashboard' %>
-<h1>Show susu</h1>
+<%= render 'shared/dashboard' %>
 
-  <div class="susu_box">
-    <div>
-     <p>Name: <%= @susu.name %></p>
-    </div>
+<div class="susu_full_view">
+  <div class="susu_title">
+    <p><%= @susu.name %></p>
+  </div>
+  <div class="susu_view">
     <div>
      <p>Members: <%= @susu.num_of_members %></p>
     </div>
@@ -20,9 +20,16 @@
     <div>
      <p>Susu Duration: <%= "#{@susu.length} weeks" %></p>
     </div>
-  </div>
+  </div><!-- End susu_view -->
+</div><!-- End susu_full_view -->
+
+<div class="member_panel">
+    <!-- <p class="susu_title">Members:</p> -->
+
+    <%= render 'members/members' %>
 
 
+</div>
 
 
 

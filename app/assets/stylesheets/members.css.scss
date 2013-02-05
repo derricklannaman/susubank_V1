@@ -1,3 +1,49 @@
-// Place all the styles related to the members controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* MEMBERS */
+
+/* NEW MEMBER FORM */
+
+#member_new {
+  width:  650px;
+}
+
+.form_group_1 {
+  float:  left;
+  width:  230px;
+}
+
+.form_group_2 {
+  float:  left;
+  width:  230px;
+}
+
+/* CONTROLS THE MEMBER PROFILE BOX ON THE SUSU FULL VIEW PAGE */
+
+.member_panel {
+  float:  right;
+  width:  350px;
+  margin-top: 20px;
+}
+
+.member_box {
+  width: 300px;
+  font-size: 14px;
+  min-height: 25px;
+  border: 1px solid #EEE;
+  margin: 5px 4px;
+  padding: 5px;
+
+}
+
+.member_info_button {
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+

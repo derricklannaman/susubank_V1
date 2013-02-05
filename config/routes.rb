@@ -19,9 +19,6 @@ Susubank::Application.routes.draw do
 
 
   resources :bankers do
-    # member do
-    #   match '/susubuilder' => 'bankers#susu_builder', :via => :post
-    # end
     resources :susus
   end
 
