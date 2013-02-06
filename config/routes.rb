@@ -12,11 +12,9 @@ Susubank::Application.routes.draw do
     get page, controller: 'info', action: page
   end
 
-  # post '/susubuilder' => 'susus#calculate'
   post '/susubuilder' => 'bankers#susubuilder'
 
-  match '/calc' => 'bankers#calculate_member_contribution'
-
+  # match '/randomize' => 'susus#randomize'
 
   resources :bankers do
     resources :susus

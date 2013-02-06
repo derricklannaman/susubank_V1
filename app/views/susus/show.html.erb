@@ -20,11 +20,12 @@
     <div>
      <p>Susu Duration: <%= "#{@susu.length} weeks" %></p>
     </div>
+    <!-- <input type="button" id="randomize" value="randomize" /> -->
+    <%= link_to "randomize", '#' %>
   </div><!-- End susu_view -->
 </div><!-- End susu_full_view -->
 
 <div class="member_panel">
-    <!-- <p class="susu_title">Members:</p> -->
 
     <%= render 'members/members' %>
 

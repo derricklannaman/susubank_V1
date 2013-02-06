@@ -1,7 +1,5 @@
 <%= render 'shared/dashboard_navigation' %>
 
-
-
 <div class="all_susu_panel">
   <%= render 'susus/susus' %>
 </div><!-- End all_susu_panel -->
@@ -9,12 +7,12 @@
 
 <div class="main_dashboard_container">
 
-<div class="form">
+<div class="form" id="susu_builder_form">
   <div class="title_bar">
-  <h3>susuBuilder</h3>
-  <p>Use susubuilder to experiment with putting your susu together.</p>
+    <h3>susuBuilder</h3>
+    <p>Use susubuilder to experiment with putting your susu together.</p>
   </div>
-  <%= form_tag "/susubuilder", id: "susu_form", :remote => true do %>
+  <%= form_tag '/susubuilder', id: "susu_form", :remote => true do %>
 
   <div class="form_field_group">
     <label for="name">Name:</label>
@@ -48,7 +46,11 @@
     </div>
 
     <div>
-      <button id="dashboard_create_susu_button" ><%= link_to "Create Susu", new_banker_susu_path(@banker), id: "dynamic_create_button" %>
+      <button id="dashboard_create_susu_button" >
+        <%#= link_to "Create Susu", banker_susus_path(@banker), method: :post, id: "dynamic_create_button" %> <!-- this will post directly to the create method, but doesnt carry over inputted data -->
+
+        <%= link_to "Create Susu", new_banker_susu_path(@banker), id:
+        "dynamic_create_button"   %>
       </button>
     </div>
   </div><!-- End form_field_group -->

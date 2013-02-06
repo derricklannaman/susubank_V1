@@ -40,7 +40,6 @@ class BankersController < ApplicationController
   end
 
   def susubuilder
-    @susubuilder =[]
     @susu_name = params[:name]
     @total_hand = params[:pay_out].to_i
     @members = params[:num_of_members].to_i
@@ -49,14 +48,11 @@ class BankersController < ApplicationController
 
     @member_contribution = params[:member_contribution]
 
-    @susubuilder << @susu_name
-
-
     @new_susu_path = "new_banker_susu_path(@authenticated_user)"
 
     # CALCULATE MEMBER CONTRIBUTIONS
     if @pay_in_frequency == "weekly"
-      @pay_in_amount = (@total_hand / @members).to_f
+      @pay_in_amount = (@total_hand / @members)
     elsif @pay_in_frequency == "every 2 weeks"
       @pay_in_amount = (@total_hand / @members) * 2
       @pay_in_frequency = "every 2 weeks"
@@ -75,9 +71,9 @@ class BankersController < ApplicationController
       @duration = @members * 4
     end
 
-
-
-
+    @susubuilder = []
+    @susubuilder.push(@susu_name, @total_hand, @members, @pay_out_frequency,
+                      @pay_in_frequency, @pay_in_amount, @duration)
 
   end
 

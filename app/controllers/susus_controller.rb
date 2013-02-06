@@ -6,27 +6,22 @@ class SususController < ApplicationController
   end
 
   def new
-
     @banker = Banker.find(params[:banker_id])
     @susu = Susu.new
-
   end
-
 
   def create
     @susu = @authenticated_user.susus.new(params[:susu])
     if @susu.save
-      flash[:notice] = "The #{@susu.name} susu has been created"
-      redirect_to banker_susu_path(@authenticated_user, @susu)
+      redirect_to banker_susu_path(@authenticated_user, @susu), notice: "#{@susu.name} Susu created"
     else
-      flash[:alert] = "Susu not created"
-      render :new
+      render :new, alert: "Susu not created"
     end
   end
 
   def show
     @susu = Susu.find(params[:id])
-    @members = Member.all
+    @members = @susu.members
     @banker = @authenticated_user
   end
 
@@ -39,15 +34,21 @@ class SususController < ApplicationController
     @susu = Susu.find(params[:id])
     @banker = @authenticated_user
     @susu.update_attributes(params[:susu])
-    flash[:notice] = "susu updated"
-      redirect_to banker_susu_path(@banker, @susu)
+      redirect_to banker_susu_path(@banker, @susu), notice: "Susu updated"
   end
 
   def destroy
     @banker = Banker.find(params[:banker_id])
-
     Susu.find(params[:id]).destroy
-      redirect_to banker_path(@banker), notice: "susu deleted"
+      redirect_to banker_path(@banker), notice: "Susu deleted"
+  end
+
+  def randomize
+    # @banker = Banker.find(params[:banker_id])
+
+    # susu = Susu.find(params[:susu_id])
+    # @members = @authenticated_user.susus.members
+    "you have been randomized"
   end
 
 

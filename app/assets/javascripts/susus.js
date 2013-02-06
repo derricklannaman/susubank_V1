@@ -1,11 +1,11 @@
 $(function(){
   // SUSU BUILDER
-  $('#susu_builder_form').hide();
+  // $('#susu_builder_form').hide();
+  // $('#dashboard_create_susu_button').hide();
+  $('#susu_builder_form, #dashboard_create_susu_button, .member_info_box').hide();
   $('#builder_button').click(show_form);
-  $('#dashboard_create_susu_button').hide();
   $('#calculate_button').click(show_susu_create_button);
   // SUSU VIEW
-  $('.member_info_box').hide();
   $('.member_info_box, button').on('click', show_member_info);
 
 });

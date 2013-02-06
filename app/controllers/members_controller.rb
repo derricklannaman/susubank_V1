@@ -2,9 +2,7 @@ class MembersController < ApplicationController
 
   def index
     @susu = Susu.find(params[:susu_id])
-    @members = Member.all
-    # binding.pry
-      # redirect_to banker_susu_path(@authenticated_user, @susu)
+    @members = @susu.members
   end
 
   def new
@@ -14,20 +12,18 @@ class MembersController < ApplicationController
 
   def create
     @susu = Susu.find(params[:susu_id])
-    @member = Member.new(params[:member])
+    @member = @susu.members.new(params[:member])
       if @member.save
-        # redirect_to susu_member_path(@susu, @member), notice: "New member added."
         redirect_to banker_susu_path(@authenticated_user, @susu), notice: "New member added."
       else
-        flash[:notice] = "Something went wrong."
-        render 'new'
+        render 'new', alert: "Something went wrong."
       end
   end
 
   def show
     @member = Member.find(params[:id])
-    @susu = Susu.find(params[:susu_id])
     @susus = @authenticated_user.susus
+    @susu = Susu.find(params[:susu_id])
   end
 
   def edit
@@ -39,13 +35,13 @@ class MembersController < ApplicationController
     @susu = Susu.find(params[:susu_id])
     @member = Member.find(params[:id])
     @member.update_attributes(params[:member])
-      redirect_to susu_members_path(@susu), notice: "Member updated."
+      redirect_to banker_susu_path(@authenticated_user, @susu), notice: "Member updated."
   end
 
   def destroy
     @susu = Susu.find(params[:susu_id])
     @member = Member.find(params[:id]).destroy
-      redirect_to susu_members_path(@susu), notice: "Member deleted"
+      redirect_to banker_susu_path(@authenticated_user, @susu), notice: "Member deleted."
   end
 
 
