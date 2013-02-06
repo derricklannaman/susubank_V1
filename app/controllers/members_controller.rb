@@ -4,7 +4,7 @@ class MembersController < ApplicationController
     @susu = Susu.find(params[:susu_id])
     @members = Member.all
     # binding.pry
-      # redirect_to susu_members_path(@susu)
+      # redirect_to banker_susu_path(@authenticated_user, @susu)
   end
 
   def new
@@ -16,7 +16,8 @@ class MembersController < ApplicationController
     @susu = Susu.find(params[:susu_id])
     @member = Member.new(params[:member])
       if @member.save
-        redirect_to susu_member_path(@susu, @member), notice: "New member added."
+        # redirect_to susu_member_path(@susu, @member), notice: "New member added."
+        redirect_to banker_susu_path(@authenticated_user, @susu), notice: "New member added."
       else
         flash[:notice] = "Something went wrong."
         render 'new'

@@ -14,7 +14,6 @@ function show_member_info(){
   $(this).parents('.member_box')
          .children('.member_info_box')
          .slideToggle("swing");
-
 }
 
 
