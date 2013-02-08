@@ -26,12 +26,12 @@
       <%= number_field_tag 'num_of_members', nil, :in => 3...31, placeholder: 'Enter number of members here' %>
     </div>
     <div>
-      Pay out frequency:<br/>
-      <%= select_tag 'pay_out_freq', (options_for_select([ ['weekly', "weekly"], ['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"] ])) %>
+      Members pay in:<br/>
+      <%= select_tag 'pay_in_freq', (options_for_select([['weekly', 1], ['every 2 weeks', 2], ['monthly', 3]])) %>
     </div>
     <div>
-      Members pay in:<br/>
-      <%= select_tag 'pay_in_freq', (options_for_select([['weekly', "weekly"], ['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
+      Full Hand pay out:<br/>
+      <%= select_tag 'pay_out_freq', (options_for_select([['weekly', 1], ['every 2 weeks', 2], ['monthly', 3] ])) %>
     </div>
     <div>
       Member contribution:<br/>

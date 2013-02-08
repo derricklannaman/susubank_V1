@@ -14,7 +14,7 @@ Susubank::Application.routes.draw do
 
   post '/susubuilder' => 'bankers#susubuilder'
 
-  # match '/randomize' => 'susus#randomize'
+  # get '/randomize' => 'members#randomize'
 
   resources :bankers do
     resources :susus
@@ -22,6 +22,9 @@ Susubank::Application.routes.draw do
 
   resources :susus do
     resources :members
+      member do
+        get :randomize
+      end
   end
 
 

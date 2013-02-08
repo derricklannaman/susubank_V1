@@ -21,7 +21,7 @@
      <p>Susu Duration: <%= "#{@susu.length} weeks" %></p>
     </div>
     <!-- <input type="button" id="randomize" value="randomize" /> -->
-    <%= link_to "randomize", '#' %>
+    <%= link_to "randomize", randomize_susu_path(@susu), :remote => true %>
   </div><!-- End susu_view -->
 </div><!-- End susu_full_view -->
 

@@ -43,37 +43,54 @@ class BankersController < ApplicationController
     @susu_name = params[:name]
     @total_hand = params[:pay_out].to_i
     @members = params[:num_of_members].to_i
-    @pay_out_frequency = params[:pay_out_freq]
-    @pay_in_frequency = params[:pay_in_freq]
+    @pay_out_hand = params[:pay_out_freq].to_i
+    @member_pay_in = params[:pay_in_freq].to_i
 
     @member_contribution = params[:member_contribution]
 
     @new_susu_path = "new_banker_susu_path(@authenticated_user)"
 
     # CALCULATE MEMBER CONTRIBUTIONS
-    if @pay_in_frequency == "weekly"
-      @pay_in_amount = (@total_hand / @members)
-    elsif @pay_in_frequency == "every 2 weeks"
-      @pay_in_amount = (@total_hand / @members) * 2
-      @pay_in_frequency = "every 2 weeks"
-    else
-      @pay_in_amount = (@total_hand / @members) * 4
-      @pay_in_frequency = "monthly"
+    if @member_pay_in == 1 && @pay_out_hand == 1
+       @pay_in_amount = (@total_hand / @members).to_f
+       @member_pay_in = "weekly"
+    elsif
+       # @pay_out_hand == 2 && @member_pay_in == 1
+       @member_pay_in == 1 && @pay_out_hand == 2
+       @pay_in_amount = (@total_hand / @members) / 2
+       @member_pay_in = "weekly"
+    elsif
+       # @pay_out_hand == 3 && @member_pay_in == 1
+       @member_pay_in == 1 && @pay_out_hand == 3
+       @pay_in_amount = (@total_hand / @members) / 4
+       @member_pay_in = "weekly"
+    elsif
+       @member_pay_in == 2 && @pay_out_hand = 2
+       @pay_in_amount = (@total_hand / @members) / 2
+       @member_pay_in = "every 2 weeks"
+    elsif
+       @member_pay_in == 3 && @pay_out_hand = 3
+       @pay_in_amount = (@total_hand / @members)
+       @member_pay_in = "monthly"
     end
 
+
+
+
     # CALCULATE SUSU DURATION
-    if @pay_out_frequency == "weekly"
-      @duration = @members * 1
-    elsif @pay_out_frequency == "every 2 weeks"
+    if @pay_out_hand == "weekly"
+      num_of_weeks = 1
+
+      @duration = @members * num_of_weeks
+    elsif @pay_out_hand == "every 2 weeks"
       @duration = @members * 2
-      @duration.to_f
     else
       @duration = @members * 4
     end
 
-    @susubuilder = []
-    @susubuilder.push(@susu_name, @total_hand, @members, @pay_out_frequency,
-                      @pay_in_frequency, @pay_in_amount, @duration)
+    # @susubuilder = []
+    # @susubuilder.push(@susu_name, @total_hand, @members, @pay_out_hand,
+    #                   @member_pay_in, @pay_in_amount, @duration)
 
   end
 

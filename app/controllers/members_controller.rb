@@ -44,5 +44,16 @@ class MembersController < ApplicationController
       redirect_to banker_susu_path(@authenticated_user, @susu), notice: "Member deleted."
   end
 
+  def randomize
+    # get susu
+    @susu = Susu.find(params[:susu_id])
+    # get all members of the susu
+    group = @susu.members
+    raise params.inspect
+    # put into an array
+    # shuffle
+    # loop thru array to display
+  end
+
 
 end

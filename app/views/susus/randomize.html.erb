@@ -1,0 +1,12 @@
+<h1>randomized list</h1>
+
+<div>
+<% @group.each do |member| %>
+  <ol>
+    <li><%= member.first_name %> <%= member.last_name %></li>
+  </ol>
+
+
+<% end %>
+
+</div>

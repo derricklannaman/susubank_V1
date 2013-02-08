@@ -44,11 +44,13 @@ class SususController < ApplicationController
   end
 
   def randomize
-    # @banker = Banker.find(params[:banker_id])
-
-    # susu = Susu.find(params[:susu_id])
-    # @members = @authenticated_user.susus.members
-    "you have been randomized"
+    # get susu
+    @susu = Susu.find(params[:id])
+    # get all members of the susu
+    # put into an array, shuffle
+    group = []
+    @group = @susu.members.shuffle
+    # loop thru array to display
   end
 
 

@@ -3,8 +3,11 @@ $('#calculations').prepend('<div class="box"><%= "Your susu, * #{@susu_name} *  
                     will pay out $#{@total_hand} to each member.\
                     All #{@members} members of the \
                     group will contribute $#{@pay_in_amount} \
-                     #{@pay_in_frequency}. The duration of the susu \
-                     will be #{@duration} weeks." %></div>');
+                     #{@member_pay_in}. #{@error}" %></div>');
+<%#= binding.pry   %>
+
+ // The duration of the susu \
+ //                     will be #{@duration} weeks.
 
 
 
