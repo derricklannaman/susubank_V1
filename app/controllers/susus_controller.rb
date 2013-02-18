@@ -1,5 +1,7 @@
 class SususController < ApplicationController
 
+  helper_method :cookies
+
   def index
     @susus = @authenticated_user.susus.order('susus.name desc')
     redirect_to @authenticated_user
@@ -8,6 +10,7 @@ class SususController < ApplicationController
   def new
     @banker = Banker.find(params[:banker_id])
     @susu = Susu.new
+    session[:name]
   end
 
   def create
@@ -41,16 +44,6 @@ class SususController < ApplicationController
     @banker = Banker.find(params[:banker_id])
     Susu.find(params[:id]).destroy
       redirect_to banker_path(@banker), notice: "Susu deleted"
-  end
-
-  def randomize
-    # get susu
-    @susu = Susu.find(params[:id])
-    # get all members of the susu
-    # put into an array, shuffle
-    group = []
-    @group = @susu.members.shuffle
-    # loop thru array to display
   end
 
 

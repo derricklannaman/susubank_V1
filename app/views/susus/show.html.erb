@@ -9,10 +9,13 @@
      <p>Members: <%= @susu.num_of_members %></p>
     </div>
     <div>
-     <p>Total member payout: <%= number_to_currency(@susu.pay_out_amount) %></p>
+     <p>Total hand: <%= number_to_currency(@susu.pay_out_amount) %></p>
     </div>
     <div>
-     <p>Pay out frequency: <%= @susu.pay_out_rotation %></p>
+     <p>Pay out frequency:<br/><%= @susu.pay_out_rotation %></p>
+    </div>
+    <div>
+     <p>Members pay in:<br/><%= @susu.member_pay_in_frequency %></p>
     </div>
     <div>
      <p>Contribution amount: <%= number_to_currency(@susu.pay_in_amount) %></p>
@@ -21,7 +24,7 @@
      <p>Susu Duration: <%= "#{@susu.length} weeks" %></p>
     </div>
     <!-- <input type="button" id="randomize" value="randomize" /> -->
-    <%= link_to "randomize", randomize_susu_path(@susu), :remote => true %>
+
   </div><!-- End susu_view -->
 </div><!-- End susu_full_view -->
 

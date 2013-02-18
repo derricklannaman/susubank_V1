@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206200940) do
+ActiveRecord::Schema.define(:version => 20130218172937) do
 
   create_table "bankers", :force => true do |t|
     t.string   "first_name"
@@ -57,9 +57,10 @@ ActiveRecord::Schema.define(:version => 20130206200940) do
     t.string   "pay_out_rotation"
     t.decimal  "pay_in_amount"
     t.decimal  "pay_out_amount"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
     t.integer  "banker_id"
+    t.string   "member_pay_in_frequency"
   end
 
 end

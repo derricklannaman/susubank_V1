@@ -6,7 +6,7 @@
     <li>Members: <%= susu.num_of_members %></li>
     <li>Payout: <%= number_to_currency(susu.pay_out_amount, :precision => 0) %></li>
     <li>Contribution: <%= number_to_currency(susu.pay_in_amount, :precision => 0) %></li>
-    <li>Period: <%= susu.pay_out_rotation %></li>
+    <li>Payout: <%= susu.pay_out_rotation %></li>
     <li>Duration: <%= susu.length %> weeks</li>
     <li>
       <%= link_to "edit", edit_banker_susu_path(@authenticated_user, susu) %>

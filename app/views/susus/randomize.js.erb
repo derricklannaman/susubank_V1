@@ -1,5 +1,6 @@
-<!-- MEMBER INDEX PARTIAL RENDERING ON SUSU SHOW PAGE -->
-<% @members.each do |member| %>
+<h1>randomized list</h1>
+<% @members.shuffle.each do |member| %>
+<%#= binding.pry   %>
   <div class="member_box">
     <%= member.first_name %> <%= member.last_name %>
     <button class="member_info_button">
@@ -16,6 +17,6 @@
         <%= link_to "edit", edit_susu_member_path(@susu, member) %>
         <%= link_to "delete",susu_member_path(@susu, member), method: :delete, data: {confirm: "Delete?"} %>
       </div>
-    </div><!-- End member_info_box -->
+    </div><!-- End member_info_box-->
 </div><!-- End member_box -->
 <% end %>

@@ -16,5 +16,5 @@
 class Banker < ActiveRecord::Base
 
   has_secure_password
-  has_many :susus
+  has_many :susus, dependent: :destroy
 end
