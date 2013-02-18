@@ -4,6 +4,7 @@
 
 html, body {
   height: 100%;
+  background: url('handmadepaper.png');
 }
 
 .wrapper {
@@ -12,6 +13,78 @@ html, body {
   height: 100%;
   margin: 0 auto -4em;
 }
+
+/* Gradient hr line */
+hr {
+    border: 0;
+    height: 2px;
+    margin:15px 0;
+    position:relative;
+    background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0) 90%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(10%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,0.65)), color-stop(90%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+}
+
+hr:before {
+    content: "";
+    display: block;
+    border-top: solid 1px #f9f9f9;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+
+
+
+/* NAVIGATION */
+
+.navbar {
+  background: url('black_paper.png');
+  height: 100px;
+  box-shadow: 0px 4px 15px #999;
+  border-bottom: 1px solid white;
+  .brand {
+     padding: 30px 55px;
+     font-size: 30px;
+  }
+}
+
+#nav_border_bar {
+  width: 100%;
+  height: 10px;
+  background: #115000; /*#FAE100;*/ /*#00701A*/
+}
+
+#main_nav {
+  margin-top: 20px;
+}
+
+
+/*Navigation messages*/
+
+.notice {
+  padding: 10px;
+  color: white;
+  letter-spacing: .5em;
+  font-size: 20px;
+  text-align: center;
+  margin-top: -18px;
+    background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0) 90%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(10%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,0.65)), color-stop(90%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* W3C */
+
+}
+
+
 
 /* FORMS */
 
@@ -39,7 +112,6 @@ html, body {
 
 .footer, .push {
   padding-top: 40px;
-  background-color: #DDD;
   height: 10em;
   clear:  both;
 }

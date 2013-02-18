@@ -2,7 +2,6 @@
 
 /* SUSU BUILDER FORM */
 
-
 .form_field_group {
   margin-top: 20px;
   margin-left: 70px;
@@ -26,20 +25,24 @@
 /* THE PANEL CONTAINING ALL THE SUSU FOR EACH BANKER */
 .all_susu_panel {
   float:  left;
-  width:  434px;
+  width:  470px;
   min-height: 600px;
-  border: 1px solid #336B24;
+  border: 1px solid #DDD;
+  border-radius: 20px;
 }
 
 /* INDIVIDUAL SUSU BOX ON BANKER PAGE*/
 .susu_box {
   float:  left;
   width:  200px;
+  background: url('wavecut.png');
   min-height:  120px;
   line-height: 1.2em;
   border: 1px solid #DDD;
+  box-shadow: inset 0px 0px 15px #999;
+  border-radius: 15px;
   margin: 5px;
-  padding: 2px;
+  padding: 10px;
   font-size:  16px;
   ul li {
     list-style-type: none;
@@ -49,7 +52,6 @@
   }
   span {
     font-weight: bold;
-    border-bottom: 1px solid #CCC;
   }
 
 }
@@ -78,21 +80,34 @@
 
 .susu_full_view {
   float:  left;
-  width:  240px;
+  width:  300px;
   margin: 100px 10px 10px 70px;
-  border: 2px solid #336B24;
-  border-radius: 15px;
+  border: 25px solid rgba(7, 219, 0, 0.3);
+  border-radius: 167px;
+
+  /* Round transparent susu border */
+  -moz-background-clip: border;
+  -webkit-background-clip: border;
+  background-clip: border;
+
+  -moz-background-clip:padding;
+  -webkit-background-clip:padding;
+  background-clip:padding;
+
+  -moz-background-clip: content;
+  -webkit-background-clip: content;
+  background-clip: content;
+
 }
 
-.susu_view {
-  margin: 10px 10px 25px 25px
+.susu_info {
+  margin: 0px 10px 25px 82px
 }
+
 .susu_title {
-  background: #336B24;
   text-align: center;
   padding: 5px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  padding-top: 20px;
 }
 
 
