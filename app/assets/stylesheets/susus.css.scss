@@ -1,5 +1,10 @@
 /* SUSU */
 
+@mixin faint_border {
+  border: 1px solid #CCC;
+  border-radius: 20px;
+}
+
 /* SUSU BUILDER FORM */
 
 .form_field_group {
@@ -27,8 +32,9 @@
   float:  left;
   width:  470px;
   min-height: 600px;
-  border: 1px solid #DDD;
-  border-radius: 20px;
+  @include faint_border
+/*  border: 1px solid #CCC;
+  border-radius: 20px;*/
 }
 
 /* INDIVIDUAL SUSU BOX ON BANKER PAGE*/
@@ -71,17 +77,18 @@
 
 .new_susu_form {
   margin: 20px 0px 10px 90px;
-  border: 1px solid #336B24;
+  /*border: 1px solid red;*/
   width: 320px;
   padding: 20px 0px 10px 100px;
   box-shadow: 0px 0px 20px #CCC;
+  @include faint_border
 }
 /* SUSU SHOW PAGE */
 
 .susu_full_view {
   float:  left;
   width:  300px;
-  margin: 100px 10px 10px 70px;
+  margin: 100px 10px 10px 10px;
   border: 25px solid rgba(7, 219, 0, 0.3);
   border-radius: 167px;
 

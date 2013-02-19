@@ -14,6 +14,9 @@
         <li><%= link_to "how it works", how_it_works_path %></li>
         <li><%= link_to "susu 101",     susu101_path %></li>
         <li><%= link_to "about",        about_path %></li>
+        <% if @authenticated_user %>
+        <li><%= link_to "dashboard", banker_path(@authenticated_user) %></li>
+        <% end %>
         <li><%= signed_in %></li>
       </ul>
     </nav>

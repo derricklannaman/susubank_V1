@@ -6,53 +6,48 @@
   </div>
  <%= form_for([@susu, @member]) do |f| %>
   <div class="form_group_1 form_field_group"><!-- group#1 -->
+
     <div class="field">
       <%= f.label :first_name %>
       <%= f.text_field :first_name %>
     </div>
-
     <div class="field">
       <%= f.label :last_name %>
       <%= f.text_field :last_name %>
     </div>
-
     <div class="field">
       <%= f.label :street_address %>
       <%= f.text_field :street_address %>
     </div>
-
     <div class="field">
       <%= f.label :city %>
       <%= f.text_field :city %>
     </div>
-
     <div class="field">
       <%= f.label :state %>
       <%= f.text_field :state %>
     </div>
 
+  </div><!-- End group#1 -->
+
+  <div class="form_group_2 form_field_group">
+
     <div class="field">
       <%= f.label :zip %>
       <%= f.text_field :zip %>
     </div>
-  </div><!-- End group#1 -->
-
-  <div class="form_group_2 form_field_group">
     <div class="field">
       <%= f.label :home_phone %>
       <%= f.text_field :home_phone %>
     </div>
-
     <div class="field">
       <%= f.label :cell_phone %>
       <%= f.text_field :cell_phone %>
     </div>
-
     <div class="field">
       <%= f.label :member_email %>
       <%= f.text_field :member_email %>
     </div>
-
     <div>
       <%= submit_tag %>
     </div>

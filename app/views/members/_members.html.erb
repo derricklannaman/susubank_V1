@@ -9,10 +9,10 @@
     <div class="member_info_box">
       <div><%= member.street_address %>, <%= member.city %>
       <%= member.state %>, <%= member.zip %></div>
-      <div>Home: <%= member.home_phone %> Cell: <%= member.cell_phone %></div>
-      <div>Email: <%= member.member_email %></div>
+      <div>Home: <%= member.home_phone %></div>
+      <div>Cell: <%= member.cell_phone %></div>
+      <div>Email:<%= member.member_email %></div>
       <div>
-        <%#= link_to "view", susu_members_path(@susu, member) %>
         <%= link_to "edit", edit_susu_member_path(@susu, member) %>
         <%= link_to "delete",susu_member_path(@susu, member), method: :delete, data: {confirm: "Delete?"} %>
       </div>

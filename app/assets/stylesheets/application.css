@@ -1,7 +1,9 @@
 /*
+ *= require 'style_aids'
  *= require 'css/bootstrap.css'
  *= require 'susus'
  *= require 'custom'
  *= require 'bankers'
  *= require 'members'
+
  */
