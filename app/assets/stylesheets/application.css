@@ -4,5 +4,6 @@
  *= require 'custom'
  *= require 'bankers'
  *= require 'members'
+ *= require 'sessions'
 
  */

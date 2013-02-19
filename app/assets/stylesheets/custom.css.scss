@@ -1,6 +1,5 @@
 /* SITE WIDE STYLING */
 
-/* SASS GUIDE LINES */
 @import "style";
 
 /* GENERAL */
@@ -69,16 +68,19 @@ hr:before {
 #nav_border_bar {
   width: 100%;
   height: 10px;
-  background: #115000;
+  background: $base_color;
   border-bottom: 1px solid #999;
+  box-shadow: inset 0px 0px 7px #222;
 
 }
 
+/* Main navigation menu */
 #main_nav {
   margin-top: 20px;
    li a {
-    text-shadow:  red;
     color:  $base_color;
+    font-size: 16px;
+    text-shadow:  none;
     &:hover {
       color:  #FFF;
       text-shadow:  none;
@@ -119,10 +121,24 @@ hr:before {
   @include faint_border;
 }
 
-.susu_form_inputs {
+
+.split_form_vertical {
+  /*float: left;*/
+  /*width: 5px;*/
+  margin-right: 440px;
+  border-right: 1px solid $base_color;
+}
+
+/* Div class name that splits input elements on a form */
+.break_form {
   float: left;
   width:  300px;
+  margin-left: 50px;
   padding-bottom: 20px;
+}
+
+.bf_banker {
+  margin-left: 80px;
 }
 
 /* FOOTER */

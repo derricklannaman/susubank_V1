@@ -1,3 +1,16 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* SESSION STYLES */
+
+@import 'style';
+
+.signup_signin_form {
+  font-size: 20px;
+  padding: 30px;
+  @include faint_border
+}
+
+
+.sign_in_title_bar {
+  margin-top: -41px;
+  width: 940px;
+  margin-left: -31px;
+}

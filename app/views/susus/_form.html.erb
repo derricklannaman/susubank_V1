@@ -9,7 +9,7 @@
     </div>
     <div class="form_field_group">
 
-    <div class="susu_form_inputs">
+    <div class="break_form">
       <div>
         <%= f.label :name, "Name your susu" %>
         <%= f.text_field :name %> <!-- session[:name] after :name will prepopulate the field but not add to database -->
@@ -26,9 +26,9 @@
         <%= f.label :pay_out_rotation, "Enter payout frequency" %>
         <%= f.select(:pay_out_rotation, options_for_select([['weekly', "weekly"],['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
       </div>
-    </div><!-- End susu_form_inputs -->
+    </div><!-- End break_form -->
 
-    <div class="susu_form_inputs">
+    <div class="break_form">
       <div>
         <%= f.label :member_pay_in_frequency, "Enter members pay in" %>
         <%= f.select(:member_pay_in_frequency, options_for_select([['weekly', "weekly"],['every 2 weeks', "every 2 weeks"], ['monthly', "monthly"]])) %>
@@ -44,7 +44,7 @@
       <div>
         <%= f.submit %>
       </div>
-    </div><!-- End susu_form_inputs -->
+    </div><!-- End break_form -->
     </div><!-- End form_field_group -->
   <% end %>
 </div>

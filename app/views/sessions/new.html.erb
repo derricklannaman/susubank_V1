@@ -1,13 +1,19 @@
-<h1>Sign in</h1>
+<!-- Banker Sign in -->
 
-<%= form_tag '/signin' do %>
+<%= form_tag '/signin', class: 'signup_signin_form' do %>
+<div class="title_bar sign_in_title_bar" >
+ <h3>Sign in</h3>
+</div>
+
+ <div class="split_form_vertical">
   <div class="field">
-    Email
-    <%= email_field_tag 'banker_email', placeholder = "Enter email address" %>
+    <p>Email</p>
+    <%= email_field_tag 'banker_email', placeholder = "Enter email address",
+    :autofocus => true %>
   </div>
 
   <div class="field">
-    Password
+    <p>Password</p>
     <%= password_field_tag 'password' %>
   </div>
 
@@ -15,3 +21,10 @@
     <%= submit_tag 'Sign in' %>
   </div>
 <% end %>
+</div>
+
+<div>
+  <p>
+    Don't already have an account? Create one <%= link_to "here", new_banker_path %>
+  </p>
+</div>

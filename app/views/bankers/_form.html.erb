@@ -1,37 +1,43 @@
 <!-- New/Edit Banker  -->
 
-  <%= form_for @banker do |f| %>
-  <div>
-    <div class="field">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, placeholder: 'enter first your name' %>
-    </div>
+  <%= form_for @banker, class: 'signup_signin_form' do |f| %>
 
-    <div class="field">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, placeholder: 'enter your last name' %>
-    </div>
-
-    <div class="field">
-      <%= f.label :banker_email %>
-      <%= f.text_field :banker_email, placeholder: 'enter your email address'
-       %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password, 'Enter a password' %>
-      <%= f.password_field :password, placeholder: 'password' %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation, 'Confirm your password' %>
-      <%= f.password_field :password_confirmation, placeholder: 'confirm password' %>
-    </div>
-
-    <div>
-      <%= f.submit %>
-    </div>
+<div class='form'>
+  <div class="title_bar" >
+   <h3>Banker Sign up</h3>
   </div>
+    <div class='break_form bf_banker'>
+      <div class="field">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, placeholder: 'enter your first name', autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, placeholder: 'enter your last name' %>
+      </div>
+      <div class="field">
+        <%= f.label :banker_email %>
+        <%= f.text_field :banker_email, placeholder: 'enter your email address'
+         %>
+      </div>
+    </div><!-- End break_form -->
+
+    <div class='break_form bf_banker'>
+      <div class="field">
+        <%= f.label :password, 'Enter a password' %>
+        <%= f.password_field :password, placeholder: 'password' %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, 'Confirm your password' %>
+        <%= f.password_field :password_confirmation, placeholder: 'confirm password' %>
+      </div>
+      <div>
+        <%= f.submit %>
+      </div>
+    </div><!-- End break_form -->
+  </div>
+    </div>
   <% end %>
+
 
 
