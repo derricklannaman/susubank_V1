@@ -16,7 +16,7 @@ class SususController < ApplicationController
   def create
     @susu = @authenticated_user.susus.new(params[:susu])
     if @susu.save
-      redirect_to banker_susu_path(@authenticated_user, @susu), notice: "#{@susu.name} Susu created"
+      redirect_to banker_susu_path(@authenticated_user, @susu), notice: "#{@susu.name} has been created"
     else
       render :new, alert: "Susu not created"
     end

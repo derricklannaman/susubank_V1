@@ -1,10 +1,9 @@
 /*BANKER*/
 
+@import 'style';
+
 /*Banker Control/Navigation*/
-/*@mixin faint_border {
-  border: 1px solid #CCC;
-  border-radius: 20px;
-}*/
+
 
 /*Vertical side panel*/
 .banker_nav_panel {
@@ -23,7 +22,7 @@
       font-size: 20px;
       margin: 4px 4px;
       list-style-type: none;
-      background: #17B10C;
+      background: $base_color;
       }
       a {
         display: block;

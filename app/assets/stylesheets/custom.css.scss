@@ -1,11 +1,7 @@
 /* SITE WIDE STYLING */
 
 /* SASS GUIDE LINES */
-
-@mixin faint_border {
-  border: 1px solid #CCC;
-  border-radius: 20px;
-}
+@import "style";
 
 /* GENERAL */
 
@@ -27,13 +23,7 @@ hr {
     height: 2px;
     margin:15px 0;
     position:relative;
-    background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0) 90%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(10%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,0.65)), color-stop(90%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* IE10+ */
-    background: linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+    @include hr_fade;
 }
 
 hr:before {
@@ -51,6 +41,16 @@ hr:before {
 
 /* NAVIGATION */
 
+#brand a {
+  display:  inline-block;
+  margin: 30px 0px 0px 30px;
+  color:  $base_color;
+  font-size: 32px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .navbar {
   background: url('black_paper.png');
   height: 100px;
@@ -62,18 +62,29 @@ hr:before {
   }
 }
 
+.pull-right {
+  margin-top: -35px;
+}
+
 #nav_border_bar {
   width: 100%;
   height: 10px;
-  background: #115000; /*#FAE100;*/ /*#00701A*/
+  background: #115000;
   border-bottom: 1px solid #999;
 
 }
 
 #main_nav {
   margin-top: 20px;
+   li a {
+    text-shadow:  red;
+    color:  $base_color;
+    &:hover {
+      color:  #FFF;
+      text-shadow:  none;
+    }
+  }
 }
-
 
 /*Navigation messages*/
 
@@ -84,27 +95,20 @@ hr:before {
   font-size: 20px;
   text-align: center;
   margin-top: -20px;
-    background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0) 90%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(10%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,0.65)), color-stop(90%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* IE10+ */
-    background: linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* W3C */
-
+  @include hr_fade;
 }
-
 
 
 /* FORMS */
 
-
-
 /* Controls the title bar within the forms */
 .title_bar {
-  background: #336B24;
+  background: $base_color;
   margin-top: -11px;
   :first-child {
     text-align: center;
+    color:  #FFF;
+    text-shadow:  0px 0px 6px #000;
     }
 }
 

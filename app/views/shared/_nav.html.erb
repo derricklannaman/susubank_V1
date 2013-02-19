@@ -1,7 +1,7 @@
 <div class="navbar">
   <div id="nav_border_bar">
   </div>
-    <div class="brand">
+    <div id="brand">
       <% if @authenticated_user %>
         <%= link_to "Susu::Bank", banker_path(@authenticated_user) %>
       <% else %>
