@@ -35,26 +35,32 @@
 /* INDIVIDUAL SUSU BOX ON BANKER PAGE*/
 .susu_box {
   float:  left;
-  width:  200px;
+  width:  198px;
   background: url('wavecut.png');
   min-height:  120px;
   line-height: 1.2em;
   border: 1px solid #DDD;
   box-shadow: inset 0px 0px 15px #999;
   border-radius: 15px;
-  margin: 5px;
+  margin: 7px;
   padding: 10px;
   font-size:  16px;
-  ul li {
-    list-style-type: none;
-  }
-  a {
-    text-decoration: none;
-  }
-  span {
-    font-weight: bold;
-  }
-
+  ul {
+    margin-left:  0;
+    li {
+        list-style-type: none;
+        text-align: center
+      }
+        a {
+          text-decoration: none;
+        }
+        span {
+          color:  #999;
+          font-size: 20px;
+          font-weight: bold;
+          /*@include letter_shadow;*/
+        }
+    }
 }
 
 #dashboard_create_susu_button {
@@ -71,10 +77,8 @@
 /* CREATE NEW SUSU FORM */
 
 .new_susu_form {
-  margin: 20px 0px 10px 90px;
-  width: 320px;
-  padding: 20px 0px 10px 100px;
-  box-shadow: 0px 0px 20px #CCC;
+  margin: 15px 0px 10px 210px;
+  width: 700px;
   @include faint_border
 }
 /* SUSU SHOW PAGE */

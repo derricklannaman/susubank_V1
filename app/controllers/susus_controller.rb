@@ -11,6 +11,7 @@ class SususController < ApplicationController
     @banker = Banker.find(params[:banker_id])
     @susu = Susu.new
     session[:name]
+    @form_title = "New Susu"
   end
 
   def create
@@ -31,6 +32,8 @@ class SususController < ApplicationController
   def edit
     @susu = Susu.find(params[:id])
     @banker = Banker.find(params[:banker_id])
+    @form_title = "Edit susu info"
+
   end
 
   def update

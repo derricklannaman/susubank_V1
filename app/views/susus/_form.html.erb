@@ -1,18 +1,16 @@
 <!-- ADD NEW SUSU -->
 
-<div class="form">
-  <%= @name %>
+<%= form_for([@authenticated_user, @susu], class: 'signup_signin_form') do |f| %>
 
-  <%= form_for([@authenticated_user, @susu]) do |f| %>
-    <div class="title_bar">
-     <h3><%= @susu.name  %></h3>
+<div class='new_susu_form'>
+    <div class="title_bar" id="new_susu_title_bar">
+      <h3><%= @form_title %></h3>
     </div>
-    <div class="form_field_group">
-
+    <!-- <div class="form_field_group"> -->
     <div class="break_form">
       <div>
         <%= f.label :name, "Name your susu" %>
-        <%= f.text_field :name %> <!-- session[:name] after :name will prepopulate the field but not add to database -->
+        <%= f.text_field :name, autofocus: true %> <!-- session[:name] after :name will prepopulate the field but not add to database -->
       </div>
       <div>
         <%= f.label :pay_out_amount, "Enter desired \"hand\": $" %>
@@ -45,9 +43,9 @@
         <%= f.submit %>
       </div>
     </div><!-- End break_form -->
-    </div><!-- End form_field_group -->
+    <!-- </div>End form_field_group -->
   <% end %>
-</div>
+
 
 
 

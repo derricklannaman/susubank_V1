@@ -2,14 +2,14 @@
 
 <div class="form" id="member_new">
   <div class="title_bar">
-    <h3><%= @member.first_name %> <%= @member.last_name %></h3>
+    <h3>New member</h3>
   </div>
  <%= form_for([@susu, @member]) do |f| %>
   <div class="form_group_1 form_field_group"><!-- group#1 -->
 
     <div class="field">
       <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, autofocus: true %>
     </div>
     <div class="field">
       <%= f.label :last_name %>

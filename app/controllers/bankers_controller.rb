@@ -7,6 +7,8 @@ class BankersController < ApplicationController
 
   def new
     @banker = Banker.new
+    @form_title = "new Banker"
+
   end
 
   def create
@@ -26,6 +28,7 @@ class BankersController < ApplicationController
 
   def edit
     @banker = Banker.find(params[:id])
+    @form_title = "edit Banker info"
   end
 
   def update

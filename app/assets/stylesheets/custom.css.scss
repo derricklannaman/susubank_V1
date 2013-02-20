@@ -110,8 +110,12 @@ hr:before {
   :first-child {
     text-align: center;
     color:  #FFF;
-    text-shadow:  0px 0px 6px #000;
+    @include letter_shadow;
     }
+}
+
+#new_susu_title_bar {
+  width: 701px;
 }
 
 .form {
@@ -123,8 +127,6 @@ hr:before {
 
 
 .split_form_vertical {
-  /*float: left;*/
-  /*width: 5px;*/
   margin-right: 440px;
   border-right: 1px solid $base_color;
 }
