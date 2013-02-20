@@ -33,7 +33,6 @@ class SususController < ApplicationController
     @susu = Susu.find(params[:id])
     @banker = Banker.find(params[:banker_id])
     @form_title = "Edit susu info"
-
   end
 
   def update

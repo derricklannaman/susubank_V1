@@ -8,6 +8,7 @@ class MembersController < ApplicationController
   def new
     @member = Member.new
     @susu = Susu.find(params[:susu_id])
+    @form_title = "+ New member"
   end
 
   def create
@@ -21,6 +22,7 @@ class MembersController < ApplicationController
   end
 
   def show
+    @banker = @authenticated_user
     @member = Member.find(params[:id])
     @susus = @authenticated_user.susus
     @susu = Susu.find(params[:susu_id])
@@ -29,6 +31,7 @@ class MembersController < ApplicationController
   def edit
     @member = Member.find(params[:id])
     @susu = Susu.find(params[:susu_id])
+    @form_title = "edit Member"
   end
 
   def update

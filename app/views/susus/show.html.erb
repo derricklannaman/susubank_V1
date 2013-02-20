@@ -1,4 +1,4 @@
-<%= render 'shared/banker_dashboard' %>
+<%= render 'shared/side_nav_panel_1' %>
 
 <div class="susu_full_view">
   <div class="susu_title">
@@ -18,7 +18,7 @@
      <p>Members pay in:<br/><%= @susu.member_pay_in_frequency %></p>
     </div>
     <div>
-     <p>Contribution amount: <%= number_to_currency(@susu.pay_in_amount) %></p>
+     <p>Contribution amount: <%= @susu.pay_in_amount %></p>
     </div>
     <div>
      <p>Susu Duration: <%= "#{@susu.length} weeks" %></p>
@@ -28,10 +28,7 @@
 </div><!-- End susu_full_view -->
 
 <div class="member_panel">
-
     <%= render 'members/members' %>
-
-
 </div>
 
 
