@@ -19,6 +19,21 @@
   padding-bottom: 75px;
 }
 
+#wrong_way_new_member {
+  margin-top: 55px;
+  margin-left: 785px;
+  padding: 14px;
+  text-align: center;
+  @include faint_border;
+  span {
+    font-weight: bold;
+  }
+}
+
+.highlight {
+  color: $base_color;
+}
+
 /* CONTROLS THE MEMBER PROFILE BOX ON THE SUSU FULL VIEW PAGE */
 
 .member_panel {

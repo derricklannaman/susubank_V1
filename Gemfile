@@ -14,6 +14,7 @@ gem 'friendly_id'
 gem 'bcrypt-ruby'
 gem 'jquery-rails'
 gem 'haml'
+gem 'thin'
 
 group :development do
   gem 'pry-rails'

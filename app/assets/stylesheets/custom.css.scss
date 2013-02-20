@@ -16,6 +16,10 @@ html, body {
   margin: 0 auto -4em;
 }
 
+a {
+  color:  $base_color;
+}
+
 /* Gradient hr line */
 hr {
     border: 0;

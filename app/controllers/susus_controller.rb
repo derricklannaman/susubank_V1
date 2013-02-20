@@ -10,8 +10,15 @@ class SususController < ApplicationController
   def new
     @banker = Banker.find(params[:banker_id])
     @susu = Susu.new
-    session[:name]
-    @form_title = "New Susu"
+    @session_name = session[:name]
+    @session_pay_out = session[:pay_out]
+    @session_num_of_members = session[:num_of_members]
+    # @session_pay_in_amount = session[:pay_in_amount]
+
+
+
+    @form_title = "+ New Susu"
+ # binding.pry
   end
 
   def create

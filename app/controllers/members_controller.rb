@@ -31,7 +31,7 @@ class MembersController < ApplicationController
   def edit
     @member = Member.find(params[:id])
     @susu = Susu.find(params[:susu_id])
-    @form_title = "edit Member"
+    @form_title = "edit Member info"
   end
 
   def update

@@ -1,4 +1,10 @@
 <!-- ADD NEW SUSU -->
+<%= @session_name %>
+<%= @session_pay_out %>
+<%= @session_num_of_members %>
+<%= how_often_is_susu_paid_out %> <!-- find in application helper -->
+<%= how_often_do_members_contribute_to_susu %>
+<%= @session_pay_in_amount %>
 
 <%= form_for([@authenticated_user, @susu], class: 'signup_signin_form') do |f| %>
 
