@@ -17,7 +17,9 @@ class SususController < ApplicationController
     if @susu.save
       redirect_to banker_susu_path(@authenticated_user, @susu), notice: "#{@susu.name} has been created"
     else
-      render :new, alert: "Susu not created"
+      @form_title = "+ new Susu"
+      flash.now[:error] = "Your Susu has not been created. Please retry."
+      render :new
     end
   end
 

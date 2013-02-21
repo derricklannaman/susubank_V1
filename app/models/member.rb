@@ -23,4 +23,5 @@ class Member < ActiveRecord::Base
 
   has_many :goals, dependent: :destroy
   belongs_to :susu
+
 end

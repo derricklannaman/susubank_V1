@@ -19,4 +19,6 @@ class Susu < ActiveRecord::Base
 
   has_many :members, dependent: :destroy
   belongs_to :banker
+
+  validates :name, presence: true
 end
