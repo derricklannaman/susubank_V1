@@ -106,6 +106,16 @@ hr:before {
   @include hr_fade;
 }
 
+.error {
+  padding: 10px;
+  color: white;
+  letter-spacing: .5em;
+  font-size: 20px;
+  text-align: center;
+  margin-top: -20px;
+  @include hr_fade_error;
+}
+
 
 /* FORMS */
 

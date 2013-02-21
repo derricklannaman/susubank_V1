@@ -1,5 +1,4 @@
 class BankersController < ApplicationController
-  helper_method :cookies
 
   def index
     @bankers = Banker.all
@@ -8,15 +7,16 @@ class BankersController < ApplicationController
   def new
     @banker = Banker.new
     @form_title = "New Banker"
-
   end
 
   def create
     @banker = Banker.new(params[:banker])
     if @banker.save
       flash[:notice] = "Banker account successfully created."
-      redirect_to @banker
+      redirect_to signin_path
     else
+      @form_title = "New Banker"
+      flash.now[:error] = "Banker account not created. Please try again."
       render :new
     end
   end
@@ -34,12 +34,13 @@ class BankersController < ApplicationController
   def update
     @banker = Banker.find(params[:id])
     @banker.update_attributes(params[:banker])
+      flash[:notice] = "Banker account successfully updated."
       redirect_to banker_path(@banker)
   end
 
   def destroy
     @banker = Banker.find(params[:id]).destroy
-      flash[:notice] = "Account deleted."
+      flash.now[:error] = "Account deleted."
       redirect_to root_path
   end
 

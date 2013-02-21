@@ -1,7 +1,5 @@
 class SususController < ApplicationController
 
-  helper_method :sessions
-
   def index
     @susus = @authenticated_user.susus.order('susus.name desc')
     redirect_to @authenticated_user
@@ -10,6 +8,7 @@ class SususController < ApplicationController
   def new
     @banker = Banker.find(params[:banker_id])
     @susu = Susu.new
+    @form_title = "+ new Susu"
  # binding.pry
   end
 
@@ -44,7 +43,8 @@ class SususController < ApplicationController
   def destroy
     @banker = Banker.find(params[:banker_id])
     Susu.find(params[:id]).destroy
-      redirect_to banker_path(@banker), notice: "Susu deleted"
+    flash[:error] = "Susu deleted"
+    redirect_to banker_path(@banker)
   end
 
 

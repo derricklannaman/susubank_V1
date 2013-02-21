@@ -3,26 +3,26 @@
 <!--
   This is the susu summary window on the susu new form page
 -->
-
+<!--
 <section class="new_susu_summary">
   <div class="break_form_small">
-    <% get_session_info %>
-    <% @susu_labels.each do |label| %>
-      <%= label %><br/>
-    <% end %>
+    <%# get_session_info %>
+    <%# @susu_labels.each do |label| %>
+      <%#= label %><br/>
+    <%# end %>
   </div>
   <div class="break_form_small">
-    <% @session_info.each do |info| %>
-      <%= info %><br/>
-    <% end %>
+    <%# @session_info.each do |info| %>
+      <%#= info %><br/>
+    <%# end %>
   </div>
   <div class="break_form_small">
     Payouts:
-    <%= how_often_is_susu_paid_out %><br/><!-- find in application helper -->
-    Contributions in:
-    <%= how_often_do_members_contribute_to_susu %>
-  </div>
-</section>
+    <%#= how_often_susu_is_paid_out %><br/><! find in application helper -->
+    <!-- Contributions in: -->
+    <%#= how_often_members_contribute_to_susu %>
+  <!-- </div> -->
+<!-- </section> -->
 
 <!--
   End susu summary window
@@ -40,15 +40,15 @@
     <div class="break_form">
       <div>
         <%= f.label :name, "Name your susu" %>
-        <%= text_field :name, session[:name] %> <!-- session[:name] after :name will prepopulate the field but not add to database -->
+        <%= f.text_field :name, autofocus: true %> <!-- session[:name] after :name will prepopulate the field but not add to database -->
       </div>
       <div>
         <%= f.label :pay_out_amount, "Enter desired \"hand\": $" %>
-        <%= text_field :pay_out_amount, @session_pay_out %>
+        <%= f.text_field :pay_out_amount, placeholder: "Enter total payout"  %>
       </div>
       <div>
         <%= f.label :num_of_members, "Number of members" %>
-        <%= number_field :num_of_members, @session_num_of_members %>
+        <%= f.number_field :num_of_members, placeholder: "Enter number of members"  %>
       </div>
       <div>
         <%= f.label :pay_out_rotation, "Enter payout frequency" %>
@@ -74,6 +74,10 @@
       </div>
     </div><!-- End break_form -->
   <% end %>
+
+  <div>
+    <%= @info %>
+  </div>
 
 
 
