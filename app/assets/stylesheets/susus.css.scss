@@ -101,6 +101,15 @@
   padding-top: 20px;
 }
 
+.new_susu_summary {
+  width: 490px;
+  min-height: 60px;
+  margin-left: 213px;
+  padding: 10px;
+  padding-left: 20px;
+  @include faint_border;
+}
+
 
 
 

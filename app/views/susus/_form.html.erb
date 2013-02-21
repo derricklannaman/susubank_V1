@@ -1,10 +1,34 @@
 <!-- ADD NEW SUSU -->
-<%= @session_name %>
-<%= @session_pay_out %>
-<%= @session_num_of_members %>
-<%= how_often_is_susu_paid_out %> <!-- find in application helper -->
-<%= how_often_do_members_contribute_to_susu %>
-<%= @session_pay_in_amount %>
+
+<!--
+  This is the susu summary window on the susu new form page
+-->
+
+<section class="new_susu_summary">
+  <div class="break_form_small">
+    <% get_session_info %>
+    <% @susu_labels.each do |label| %>
+      <%= label %><br/>
+    <% end %>
+  </div>
+  <div class="break_form_small">
+    <% @session_info.each do |info| %>
+      <%= info %><br/>
+    <% end %>
+  </div>
+  <div class="break_form_small">
+    Payouts:
+    <%= how_often_is_susu_paid_out %><br/><!-- find in application helper -->
+    Contributions in:
+    <%= how_often_do_members_contribute_to_susu %>
+  </div>
+</section>
+
+<!--
+  End susu summary window
+-->
+
+<!-- NEW SUSU FORM -->
 
 <%= form_for([@authenticated_user, @susu], class: 'signup_signin_form') do |f| %>
 
@@ -12,19 +36,19 @@
     <div class="title_bar" id="new_susu_title_bar">
       <h3><%= @form_title %></h3>
     </div>
-    <!-- <div class="form_field_group"> -->
+
     <div class="break_form">
       <div>
         <%= f.label :name, "Name your susu" %>
-        <%= f.text_field :name, autofocus: true %> <!-- session[:name] after :name will prepopulate the field but not add to database -->
+        <%= text_field :name, session[:name] %> <!-- session[:name] after :name will prepopulate the field but not add to database -->
       </div>
       <div>
         <%= f.label :pay_out_amount, "Enter desired \"hand\": $" %>
-        <%= f.text_field :pay_out_amount %>
+        <%= text_field :pay_out_amount, @session_pay_out %>
       </div>
       <div>
         <%= f.label :num_of_members, "Number of members" %>
-        <%= f.number_field :num_of_members %>
+        <%= number_field :num_of_members, @session_num_of_members %>
       </div>
       <div>
         <%= f.label :pay_out_rotation, "Enter payout frequency" %>

@@ -87,7 +87,7 @@ class BankersController < ApplicationController
        @member_pay_in == 2 && @pay_out_hand == 2
        @pay_in_amount = (@total_hand / @members) / 2
        @member_pay_in = 'every 2 weeks'
-    elsif
+    else
        @member_pay_in == 3 && @pay_out_hand == 3
        @pay_in_amount = (@total_hand / @members)
        @member_pay_in = "monthly"

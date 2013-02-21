@@ -1,6 +1,6 @@
 class SususController < ApplicationController
 
-  helper_method :cookies
+  helper_method :sessions
 
   def index
     @susus = @authenticated_user.susus.order('susus.name desc')
@@ -10,14 +10,6 @@ class SususController < ApplicationController
   def new
     @banker = Banker.find(params[:banker_id])
     @susu = Susu.new
-    @session_name = session[:name]
-    @session_pay_out = session[:pay_out]
-    @session_num_of_members = session[:num_of_members]
-    # @session_pay_in_amount = session[:pay_in_amount]
-
-
-
-    @form_title = "+ New Susu"
  # binding.pry
   end
 
