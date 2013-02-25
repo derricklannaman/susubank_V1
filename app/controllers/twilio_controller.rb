@@ -13,8 +13,9 @@ class TwilioController < ApplicationController
     @text_message = client.account.sms.messages.create({:from => from_phone, :to =>
     to_phone, :body => txt})
 
-    redirect_to banker_susu_path(@banker, @susu)
 
+    # redirect_to :controller => "susus", :action => "show"
+    redirect_to :back
   end
 
 end

@@ -13,8 +13,9 @@ Susubank::Application.routes.draw do
   end
 
   # messaging with twilio
-  get '/twilio' => 'twilio#new'
+  get '/twilio' => 'susus#show'
   post '/twilio' => 'twilio#create'
+
 
   post '/susubuilder' => 'bankers#susubuilder'
   # get '/calculate' => 'bankers#calculate'

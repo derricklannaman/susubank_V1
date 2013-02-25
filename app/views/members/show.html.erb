@@ -38,19 +38,30 @@
   </div>
 </div>
 
-<!-- <div class="clear"></div> -->
 
-  <div>
+<!-- TEXT MESSAGE MODAL -->
+
+<a href="#myModal" role="button" class="btn" id="send_text_button" data-toggle="modal">Send Text</a>
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><%= "Send text to #{@member.first_name}"%></h3>
+  </div>
+  <div class="modal-body">
     <%= form_tag '/twilio' do %>
-    <p>
-      <%= "Send #{@member.first_name} a text: " %>
-      <%= hidden_field_tag 'phone', @member.cell_phone %>
 
+    <%= hidden_field_tag 'phone', @member.cell_phone %>
     </p>
         <%= text_area_tag :text_message %><br/>
         <%= submit_tag "Send message" %>
     <% end %>
   </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
 
 </div>
 
