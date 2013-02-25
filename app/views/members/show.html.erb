@@ -1,37 +1,44 @@
-<h1>show member</h1>
+<!-- <h1>show member</h1> -->
 
-<button>
 <%= link_to "back to susu", banker_susu_path(@authenticated_user, @susu) %>
-</button><br/>
-<div class="form">
-  <div>
-   <p>first name: <%= @member.first_name %></p>
-  </div>
-  <div>
-   <p>last name: <%= @member.last_name %></p>
-  </div>
-  <div>
-   <p>street address: <%= @member.street_address %></p>
-  </div>
-  <div>
-   <p>city: <%= @member.city %></p>
-  </div>
-  <div>
-   <p>state: <%= @member.state %></p>
-  </div>
-  <div>
-   <p>zip: <%= @member.zip %></p>
-  </div>
-  <div>
-   <p>home: <%= @member.home_phone %></p>
-  </div>
-  <div>
-   <p>cell: <%= @member.cell_phone %></p>
-  </div>
-  <div>
-   <p>email: <%= @member.member_email %></p>
-  </div>
+<br/>
 
+<div class="form new_susu_form signup_signin_form", id="view_member_form">
+  <div class="title_bar" id="view_member_title_bar">
+   <h3><%= @form_title %></h3>
+</div>
+
+<div class="break_form">
+  <div>
+   <p>First name: <%= @member.first_name %></p>
+  </div>
+  <div>
+   <p>Last name: <%= @member.last_name %></p>
+  </div>
+  <div>
+   <p>Street address: <%= @member.street_address %></p>
+  </div>
+  <div>
+   <p>City: <%= @member.city %></p>
+  </div>
+  <div>
+   <p>State: <%= @member.state %>, Zip: <%= @member.zip %></p>
+  </div>
+</div>
+
+<div class="break_form">
+  <div>
+   <p>Home: <%= @member.home_phone %></p>
+  </div>
+  <div>
+   <p>Cell: <%= @member.cell_phone %></p>
+  </div>
+  <div>
+   <p>Email: <%= @member.member_email %></p>
+  </div>
+</div>
+
+<!-- <div class="clear"></div> -->
 
   <div>
     <%= form_tag '/twilio' do %>

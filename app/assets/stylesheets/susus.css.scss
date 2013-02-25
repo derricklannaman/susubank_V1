@@ -31,6 +31,7 @@
 /* THE PANEL CONTAINING ALL THE SUSU FOR EACH BANKER */
 .all_susu_panel {
   float:  left;
+  padding-left: 22px;
   width:  470px;
   min-height: 600px;
   @include faint_border
@@ -94,7 +95,7 @@
   width:  300px;
   margin: 100px 10px 10px 10px;
   border: 25px solid rgba(7, 219, 0, 0.3);
-  border-radius: 167px;
+  border-radius: 122px;
 }
 
 .susu_info {

@@ -26,6 +26,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
     @susus = @authenticated_user.susus
     @susu = Susu.find(params[:susu_id])
+    @form_title = "Viewing #{@member.first_name}'s info"
   end
 
   def edit
