@@ -12,9 +12,14 @@ Susubank::Application.routes.draw do
     get page, controller: 'info', action: page
   end
 
-  post '/susubuilder' => 'bankers#susubuilder'
+  # messaging with twilio
+  get '/twilio' => 'twilio#new'
+  post '/twilio' => 'twilio#create'
 
-  # get '/randomize' => 'members#randomize'
+  post '/susubuilder' => 'bankers#susubuilder'
+  # get '/calculate' => 'bankers#calculate'
+  # get '/prepopulate_new_susu_form' => 'susus#prepopulate_new_susu_form'
+
 
   resources :bankers do
     resources :susus
@@ -23,7 +28,7 @@ Susubank::Application.routes.draw do
   resources :susus do
     resources :members
       member do
-        get :randomize
+        # get :randomize
       end
   end
 

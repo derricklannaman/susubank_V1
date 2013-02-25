@@ -11,17 +11,21 @@
 
 .box {
   float:  left;
-  width:  240px;
-  min-height:  302px;
+  width:  250px;
+  min-height:  250px;
   line-height: 1.5em;
-  border: 1px solid #336B24;
-  border-left: none;
-  margin-top: 90px;
-  font-size:  30px;
-  background: #999;
-  color:  #FFF;
+  border: 10px solid $base_color;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 40px;
+  font-size:  25px;
+  background: -webkit-gradient(radial, center center, 6, center center, 250, from(#FFF), to($base_color)); /*#F0D928 gold*/
+  color: #FFF;
+  box-shadow: inset 0px 0px 3px white;
+  @include letter_shadow;
   padding:  7px;
   padding-left: 20px;
+
 }
 
 /* THE PANEL CONTAINING ALL THE SUSU FOR EACH BANKER */
@@ -49,10 +53,12 @@
     margin-left:  0;
     li {
         list-style-type: none;
-        text-align: center
+        text-align: center;
+        font-size: 16px;
       }
         a {
           text-decoration: none;
+          font-size: 16px;
         }
         span {
           color:  #999;

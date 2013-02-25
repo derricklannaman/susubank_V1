@@ -7,9 +7,8 @@ class SususController < ApplicationController
 
   def new
     @banker = Banker.find(params[:banker_id])
-    @susu = Susu.new
+    @susu = Susu.new(params[:susu])
     @form_title = "+ new Susu"
- # binding.pry
   end
 
   def create
@@ -19,7 +18,7 @@ class SususController < ApplicationController
     else
       @form_title = "+ new Susu"
       flash.now[:error] = "Your Susu has not been created. Please retry."
-      render :new
+      render 'new'
     end
   end
 

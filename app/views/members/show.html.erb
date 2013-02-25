@@ -1,7 +1,7 @@
 <h1>show member</h1>
 
 <button>
-<%= link_to "<< back to susu", banker_susu_path(@authenticated_user, @susu) %>
+<%= link_to "back to susu", banker_susu_path(@authenticated_user, @susu) %>
 </button><br/>
 <div class="form">
   <div>
@@ -30,6 +30,19 @@
   </div>
   <div>
    <p>email: <%= @member.member_email %></p>
+  </div>
+
+
+  <div>
+    <%= form_tag '/twilio' do %>
+    <p>
+      <%= "Send #{@member.first_name} a text: " %>
+      <%= hidden_field_tag 'phone', @member.cell_phone %>
+
+    </p>
+        <%= text_area_tag :text_message %><br/>
+        <%= submit_tag "Send message" %>
+    <% end %>
   </div>
 
 </div>

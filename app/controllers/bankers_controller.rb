@@ -45,19 +45,21 @@ class BankersController < ApplicationController
   end
 
   def susubuilder
+    raise params.inspect
+
     # @susu_name = params[:name]
 
     # Grab the info, place in session which allows info to persist to redirect
-    session[:name] = params[:name]
-    @susu = session[:name]
+    # session[:name] = params[:name]
+    # @susu = session[:name]
 
-    session[:num_of_members] = params[:num_of_members]
+    # session[:num_of_members] = params[:num_of_members]
 
-    session[:pay_out] = params[:pay_out]
+    # session[:pay_out] = params[:pay_out]
 
-    session[:pay_out_freq] = params[:pay_out_freq]
+    # session[:pay_out_freq] = params[:pay_out_freq]
 
-    session[:pay_in_freq] = params[:pay_in_freq]
+    # session[:pay_in_freq] = params[:pay_in_freq]
     # session[:pay_in_amount]
 
     @susu_name = params[:name]
@@ -71,28 +73,28 @@ class BankersController < ApplicationController
     @new_susu_path = "new_banker_susu_path(@authenticated_user)"
 
     # CALCULATE MEMBER CONTRIBUTIONS
-    if @member_pay_in == 1 && @pay_out_hand == 1
-       @pay_in_amount = (@total_hand / @members)
-       @member_pay_in = "weekly"
-    elsif
-       # @pay_out_hand == 'every 2 weeks' && @member_pay_in == 'weekly'
-       @member_pay_in == 1 && @pay_out_hand == 2
-       @pay_in_amount = (@total_hand / @members) / 2
-       @member_pay_in = "weekly"
-    elsif
-       # @pay_out_hand == 'monthly' && @member_pay_in == 'weekly'
-       @member_pay_in == 1 && @pay_out_hand == 3
-       @pay_in_amount = (@total_hand / @members) / 4
-       @member_pay_in = "weekly"
-    elsif
-       @member_pay_in == 2 && @pay_out_hand == 2
-       @pay_in_amount = (@total_hand / @members) / 2
-       @member_pay_in = 'every 2 weeks'
-    else
-       @member_pay_in == 3 && @pay_out_hand == 3
-       @pay_in_amount = (@total_hand / @members)
-       @member_pay_in = "monthly"
-    end
+    # if @member_pay_in == 1 && @pay_out_hand == 1
+    #    @pay_in_amount = (@total_hand / @members)
+    #    @member_pay_in = "weekly"
+    # elsif
+    #    # @pay_out_hand == 'every 2 weeks' && @member_pay_in == 'weekly'
+    #    @member_pay_in == 1 && @pay_out_hand == 2
+    #    @pay_in_amount = (@total_hand / @members) / 2
+    #    @member_pay_in = "weekly"
+    # elsif
+    #    # @pay_out_hand == 'monthly' && @member_pay_in == 'weekly'
+    #    @member_pay_in == 1 && @pay_out_hand == 3
+    #    @pay_in_amount = (@total_hand / @members) / 4
+    #    @member_pay_in = "weekly"
+    # elsif
+    #    @member_pay_in == 2 && @pay_out_hand == 2
+    #    @pay_in_amount = (@total_hand / @members) / 2
+    #    @member_pay_in = 'every 2 weeks'
+    # else
+    #    @member_pay_in == 3 && @pay_out_hand == 3
+    #    @pay_in_amount = (@total_hand / @members)
+    #    @member_pay_in = "monthly"
+    # end
 
 
 
@@ -111,6 +113,11 @@ class BankersController < ApplicationController
     # @susubuilder = []
     # @susubuilder.push(@susu_name, @total_hand, @members, @pay_out_hand,
     #                   @member_pay_in, @pay_in_amount, @duration)
+
+  end
+
+
+  def calculate
 
   end
 

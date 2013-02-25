@@ -1,5 +1,5 @@
 $(function(){
 
-  $('.notice').delay(4000).fadeOut(500);
+  $('.notice').delay(2500).fadeOut(500);
 
 });
