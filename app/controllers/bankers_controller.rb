@@ -70,6 +70,34 @@ class BankersController < ApplicationController
 
     @new_susu_path = "new_banker_susu_path(@authenticated_user)"
 
+  # CALCULATE MEMBER CONTRIBUTIONS FROM DROP DOWN LIST
+    # when members pay in weekly and recv payouts weekly
+    if @member_pay_in == 1 && @pay_out_hand == 1
+       @pay_in_amount = (@total_hand / @members)
+       @member_pay_in = "weekly"
+    elsif
+    # when members pay in weekly and recv payouts every 2 weeks
+       @member_pay_in == 1 && @pay_out_hand == 2
+       @pay_in_amount = (@total_hand / @members) / 2
+       @member_pay_in = "weekly"
+    elsif
+    # when members pay in weekly and recv payouts monthly
+       @member_pay_in == 1 && @pay_out_hand == 3
+       @pay_in_amount = (@total_hand / @members) / 4
+       @member_pay_in = "weekly"
+    elsif
+       @member_pay_in == 2 && @pay_out_hand == 2
+       @pay_in_amount = (@total_hand / @members)
+       @member_pay_in = 'every 2 weeks'
+     elsif
+       @member_pay_in == 2 && @pay_out_hand == 3
+       @pay_in_amount = (@total_hand / @members) / 2
+       @member_pay_in = 'monthly'
+    else
+       @member_pay_in == 3 && @pay_out_hand == 3
+       @pay_in_amount = (@total_hand / @members)
+       @member_pay_in = "monthly"
+    end
 
     # CALCULATE SUSU DURATION
     if @pay_out_hand == "weekly"
@@ -90,7 +118,6 @@ class BankersController < ApplicationController
 
 
   def calculate
-
   end
 
 
