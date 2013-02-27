@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "You are now signed in."
       redirect_to banker_path(banker)
     else
-      flash[:error] = "Oops! something went wrong. Please try again."
+      flash[:error] = "Oops! Something went wrong. Please try again."
       render :new
     end
   end

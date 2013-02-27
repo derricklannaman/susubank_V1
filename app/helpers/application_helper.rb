@@ -59,7 +59,7 @@ module ApplicationHelper
        @member_pay_in = 'every 2 weeks'
     else
        @member_pay_in == 3 && @pay_out_hand == 3
-       @pay_in_amount = (@total_hand / @members)
+       @pay_in_amount = (@total_hand / @members) * 4
        @member_pay_in = "monthly"
     end
   end

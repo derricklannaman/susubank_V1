@@ -45,8 +45,6 @@ class BankersController < ApplicationController
   end
 
   def susubuilder
-    raise params.inspect
-
     # @susu_name = params[:name]
 
     # Grab the info, place in session which allows info to persist to redirect
@@ -71,32 +69,6 @@ class BankersController < ApplicationController
     @member_contribution = params[:member_contribution]
 
     @new_susu_path = "new_banker_susu_path(@authenticated_user)"
-
-    # CALCULATE MEMBER CONTRIBUTIONS
-    # if @member_pay_in == 1 && @pay_out_hand == 1
-    #    @pay_in_amount = (@total_hand / @members)
-    #    @member_pay_in = "weekly"
-    # elsif
-    #    # @pay_out_hand == 'every 2 weeks' && @member_pay_in == 'weekly'
-    #    @member_pay_in == 1 && @pay_out_hand == 2
-    #    @pay_in_amount = (@total_hand / @members) / 2
-    #    @member_pay_in = "weekly"
-    # elsif
-    #    # @pay_out_hand == 'monthly' && @member_pay_in == 'weekly'
-    #    @member_pay_in == 1 && @pay_out_hand == 3
-    #    @pay_in_amount = (@total_hand / @members) / 4
-    #    @member_pay_in = "weekly"
-    # elsif
-    #    @member_pay_in == 2 && @pay_out_hand == 2
-    #    @pay_in_amount = (@total_hand / @members) / 2
-    #    @member_pay_in = 'every 2 weeks'
-    # else
-    #    @member_pay_in == 3 && @pay_out_hand == 3
-    #    @pay_in_amount = (@total_hand / @members)
-    #    @member_pay_in = "monthly"
-    # end
-
-
 
 
     # CALCULATE SUSU DURATION
