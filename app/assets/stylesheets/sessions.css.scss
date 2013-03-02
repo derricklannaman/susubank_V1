@@ -5,7 +5,8 @@
 .signup_signin_form {
   font-size: 20px;
   padding: 30px;
-  @include faint_border
+  @include faint_border;
+  @include form_bg_gradient;
 }
 
 

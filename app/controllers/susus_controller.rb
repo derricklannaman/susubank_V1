@@ -6,6 +6,7 @@ class SususController < ApplicationController
   end
 
   def new
+    # raise params.inspect
     @banker = Banker.find(params[:banker_id])
     @susu = Susu.new(params[:susu])
     @form_title = "+ new Susu"

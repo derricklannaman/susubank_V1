@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
 
+
   def index
     @susu = Susu.find(params[:susu_id])
     @members = @susu.members

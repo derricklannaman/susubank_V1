@@ -9,13 +9,28 @@ html, body {
   background: url('handmadepaper.png');
 }
 
+.hero-unit {
+  background: url('random_grey_variations.png');
+}
+
+#hero {
+  padding-left: 150px;
+  color:  orange;
+  text-shadow:  $shadow_sharp;
+  h3 {
+    color:  orange;
+    font-size: 22px;
+    margin-left: 13px;
+    text-shadow:  $shadow_sharpest;
+  }
+}
+
 .wrapper {
   /*min-height: 100%;*/
   width: auto !important;
   height: 100%;
   margin: 0 auto -4em;
 }
-
 
 a {
   color:  $base_color;
@@ -112,28 +127,34 @@ hr:before {
   }
 }
 
+/* Modal header */
+.modal-header {
+  background: $base_color;
+  color: #FFF;
+  @include letter_shadow
+}
+
 /* Navigation messages */
 
 .notice {
-  padding: 10px;
-  color: white;
-  letter-spacing: .5em;
-  font-size: 20px;
-  text-align: center;
-  margin-top: -20px;
-  @include hr_fade;
+  @include notify;
+  @include hr_fade_notice;
 }
 
 .error {
-  padding: 10px;
-  color: white;
-  letter-spacing: .5em;
-  font-size: 20px;
-  text-align: center;
-  margin-top: -20px;
+  @include notify;
   @include hr_fade_error;
 }
 
+/* INTRO PAGES */
+.benefit_box {
+  float:  left;
+  border-radius: 10px;
+  width: 290px;
+  height: 300px;
+  margin: 10px;
+  background: url('random_grey_variations.png');
+}
 
 /* FORMS */
 
@@ -141,6 +162,7 @@ hr:before {
 .title_bar {
   background: $base_color;
   margin-top: -11px;
+  box-shadow: 0px 15px 35px -9px #555;
   :first-child {
     text-align: center;
     color:  #FFF;
@@ -150,6 +172,7 @@ hr:before {
 
 #new_susu_title_bar {
   width: 701px;
+  /*@include bg_grade;*/
 }
 
 #view_member_title_bar {
@@ -169,6 +192,7 @@ hr:before {
   margin-left: 5px;
   margin-top: 0px;
   @include faint_border;
+  @include form_bg_gradient;
 }
 
 
@@ -199,6 +223,10 @@ hr:before {
 
 #send_text_button {
   @include fat_orange_stelo;
+}
+
+.intro_call_to_action {
+  /*@include fat_orange_stelo*/
 }
 
 /* FOOTER */
@@ -241,12 +269,12 @@ hr:before {
 }
 
 .alignright {
-  float: right;
-  padding: 0 0 10px 10px; /* note the padding around a right floated image */
+  margin-left: 15px;
 }
 
 .alignleft {
   float: left;
-  padding: 0 10px 10px 0; /* note the padding around a left floated image */
+  margin-left: 10px;
+  /*padding: 0 10px 10px 0;  note the padding around a left floated image */
 }
 

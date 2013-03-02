@@ -19,7 +19,7 @@
   border-top-right-radius: 20px;
   margin-top: 40px;
   font-size:  25px;
-  background: -webkit-gradient(radial, center center, 6, center center, 250, from(#FFF), to($base_color)); /*#F0D928 gold*/
+  @include bg_gradient;
   color: #FFF;
   box-shadow: inset 0px 0px 3px white;
   @include letter_shadow;
@@ -31,9 +31,9 @@
 /* THE PANEL CONTAINING ALL THE SUSU FOR EACH BANKER */
 .all_susu_panel {
   float:  left;
-  padding-left: 22px;
+  padding-left: 2px;
   width:  470px;
-  min-height: 600px;
+  min-height: 500px;
   @include faint_border
 }
 
@@ -86,7 +86,8 @@
 .new_susu_form {
   margin: 15px 0px 10px 210px;
   width: 700px;
-  @include faint_border
+  @include faint_border;
+  @include form_bg_gradient;
 }
 /* SUSU SHOW PAGE */
 
@@ -96,6 +97,8 @@
   margin: 100px 10px 10px 10px;
   border: 25px solid rgba(7, 219, 0, 0.3);
   border-radius: 122px;
+  box-shadow: 0px 15px 35px -9px #555;
+
 }
 
 .susu_info {
@@ -106,7 +109,21 @@
   text-align: center;
   padding: 5px;
   padding-top: 20px;
+  p {
+    color: #666;
+    border: 1px solid #cccccc;
+    background: yellow;
+    border-radius: 50px;
+    width: 170px;
+    margin-left: 46px;
+    padding: 9px;
+    margin-top: -46px;
+    box-shadow: 0px 0px 40px -10px #333;
+    @include bg_gradient;
+  }
 }
+
+
 
 .new_susu_summary {
   width: 490px;

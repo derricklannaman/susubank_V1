@@ -49,7 +49,7 @@
 
     <div>
       <button id="dashboard_create_susu_button" >
-        <%= link_to "Create Susu", banker_susus_path(@banker), id: "dynamic_create_button" %> <!-- this will post directly to the create method, but doesnt carry over inputted data -->
+        <%= link_to "Create Susu", new_banker_susu_path(@banker), id: "dynamic_create_button" %> <!-- this will post directly to the create method, but doesnt carry over inputted data -->
       </button>
       <% end %>
     </div>

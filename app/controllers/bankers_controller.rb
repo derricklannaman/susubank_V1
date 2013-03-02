@@ -75,17 +75,17 @@ class BankersController < ApplicationController
     if @member_pay_in == 1 && @pay_out_hand == 1
        @pay_in_amount = (@total_hand / @members)
        @member_pay_in = "weekly"
-    elsif
+      elsif
     # when members pay in weekly and recv payouts every 2 weeks
        @member_pay_in == 1 && @pay_out_hand == 2
        @pay_in_amount = (@total_hand / @members) / 2
        @member_pay_in = "weekly"
-    elsif
+      elsif
     # when members pay in weekly and recv payouts monthly
        @member_pay_in == 1 && @pay_out_hand == 3
        @pay_in_amount = (@total_hand / @members) / 4
        @member_pay_in = "weekly"
-    elsif
+     elsif
        @member_pay_in == 2 && @pay_out_hand == 2
        @pay_in_amount = (@total_hand / @members)
        @member_pay_in = 'every 2 weeks'
@@ -93,7 +93,7 @@ class BankersController < ApplicationController
        @member_pay_in == 2 && @pay_out_hand == 3
        @pay_in_amount = (@total_hand / @members) / 2
        @member_pay_in = 'monthly'
-    else
+      else
        @member_pay_in == 3 && @pay_out_hand == 3
        @pay_in_amount = (@total_hand / @members)
        @member_pay_in = "monthly"
