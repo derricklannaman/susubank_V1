@@ -1,0 +1,30 @@
+<div>
+  <h2>Stats</h2>
+</div>
+
+<div class="box_score">
+<h3>Overall Box Score</h3>
+  <%= "Member Since : #{member_since}"   %>
+  <p>
+    <%= "The total value of all susus you created : #{number_to_currency(total_value_of_a_bankers_susus)}" %>
+  </p>
+  <p>
+    <%= "Total # of susus created : #{total_number_of_susus}" %>
+  </p>
+
+  <p>
+    <%= "Average susu value : #{number_to_currency(avg_susu_dollar_value(total_number_of_susus))}" %>
+  </p>
+
+  <p>
+    <%= "Total number of members : #{total_number_of_members}" %>
+  </p>
+
+  <p>
+    <%= "Average number of members : #{avg_number_of_members(total_number_of_members, total_number_of_susus )}" %>
+  </p>
+</div>
+
+<div class="box_score">
+</div>
+

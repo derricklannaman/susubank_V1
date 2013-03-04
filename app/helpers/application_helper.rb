@@ -38,8 +38,37 @@ module ApplicationHelper
     @form_title = "+ New Susu"
   end
 
+  def member_since
+    time = @authenticated_user.created_at
+    time.strftime('%m/%d/%Y')
+  end
+
+  def get_todays_date
+    today = Time.now
+    today.strftime('%m/%d/%Y')
+  end
+
+  # Stats for susus
+
   def total_value_of_a_bankers_susus
     @authenticated_user.susus.map(&:pay_out_amount).reduce(:+)
+  end
+
+  def total_number_of_susus
+    @authenticated_user.susus.count
+  end
+
+  def avg_susu_dollar_value(number_of_susus)
+    dollar_value = @authenticated_user.susus.map(&:pay_out_amount).reduce(:+)
+    dollar_value / total_number_of_susus
+  end
+
+  def total_number_of_members
+    @authenticated_user.susus.map(&:num_of_members).reduce(:+)
+  end
+
+  def avg_number_of_members(total_members, number_of_susus)
+    total_number_of_members / total_number_of_susus
   end
 
 

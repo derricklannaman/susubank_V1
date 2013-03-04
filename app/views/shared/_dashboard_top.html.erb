@@ -1,8 +1,10 @@
 <!-- DASHBOARD_TOP -->
 
 <div class="intro_bar">
-  <h1>Dashboard</h1>
+  <h1>Dashboard</h1> <%= get_todays_date %>
   <p><%= "Welcome #{@authenticated_user.first_name} #{@authenticated_user.last_name}"%></p>
+
+
   <ul>
     <li><%= link_to "Get Stats", stats_path %>  </li>
   </ul>
