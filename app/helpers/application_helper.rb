@@ -38,6 +38,10 @@ module ApplicationHelper
     @form_title = "+ New Susu"
   end
 
+  def total_value_of_a_bankers_susus
+    @authenticated_user.susus.map(&:pay_out_amount).reduce(:+)
+  end
+
 
 
 

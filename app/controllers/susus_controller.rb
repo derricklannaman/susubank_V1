@@ -6,13 +6,13 @@ class SususController < ApplicationController
   end
 
   def new
-    # raise params.inspect
     @banker = Banker.find(params[:banker_id])
     @susu = Susu.new(params[:susu])
     @form_title = "+ new Susu"
   end
 
   def create
+    # raise params.inspect
     @susu = @authenticated_user.susus.new(params[:susu])
     if @susu.save
       redirect_to banker_susu_path(@authenticated_user, @susu), notice: "#{@susu.name} has been created"
@@ -47,6 +47,12 @@ class SususController < ApplicationController
     Susu.find(params[:id]).destroy
     flash[:error] = "Susu deleted"
     redirect_to banker_path(@banker)
+  end
+
+
+
+# private
+  def stats
   end
 
 

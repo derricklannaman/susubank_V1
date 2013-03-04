@@ -1,4 +1,5 @@
 <%= render 'shared/side_nav_panel_2' %>
+<h5><%= "The total value of all susus you created : #{number_to_currency(total_value_of_a_bankers_susus)}" %></h5>
 
 <div class="all_susu_panel">
   <%= render 'susus/susus' %>
@@ -44,7 +45,8 @@
       <%= text_field_tag 'duration', 'calculate automatically', :disabled => true %>
     </div>
     <div>
-      <%= submit_tag 'Calculate', id: 'calculate_button', :remote => true %>
+      <%#= submit_tag 'Calculate', id: 'calculate_button', :remote => true %>
+      <button id="calculate_button">Calculate</button>
     </div>
 
     <div>

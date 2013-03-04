@@ -16,6 +16,8 @@ Susubank::Application.routes.draw do
   get '/twilio' => 'susus#show'
   post '/twilio' => 'twilio#create'
 
+  match "/stats" => 'susus#stats', via: :get
+
 
   post '/susubuilder' => 'bankers#susubuilder'
   # get '/calculate' => 'bankers#calculate'

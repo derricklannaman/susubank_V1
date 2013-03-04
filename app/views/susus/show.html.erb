@@ -9,7 +9,7 @@
      <p>Members: <%= @susu.num_of_members %></p>
     </div>
     <div>
-     <p>Total hand: <%= number_to_currency(@susu.pay_out_amount) %></p>
+     <p>Total hand: <%= number_to_currency(@susu.pay_out_amount, :precision => 0) %></p>
     </div>
     <div>
      <p>Pay out frequency:<br/><%= @susu.pay_out_rotation %></p>
