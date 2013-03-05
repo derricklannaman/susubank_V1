@@ -13,6 +13,7 @@
   border: 1px solid #CCC;
   border-radius: 20px;
   margin-right: 10px;
+  @include box_inset;
   ul {
     margin: 4px;
     padding: 10px 10px;
@@ -42,6 +43,48 @@
   margin-bottom: 25px;
   text-align: center;
   color:  #999;
+  @include box_inset;
+  h1 {
+    float:  left;
+    width:  300px;
+    margin-left: 300px;
+    padding-top: 10px;
+  }
+}
+
+.date {
+  float:  right;
+  width:  100px;
+  color:  $base_color;
+  margin-top: 5px;
+}
+
+.welcome {
+  margin-left: -41px;
+  margin-top: -10px;
+}
+
+.stat_nav {
+  margin-left: 200px;
+  list-style-type: none;
+  font-size: 14px;
+  padding-left: 500px;
+    a {
+      width:  100px;
+      list-style-type: none;
+      color:  #999;
+      &:hover {
+        -moz-transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        background: #FFF;
+        padding: 7px;
+        border-radius: 6px;
+        text-decoration:  none;
+        color: $base_color;
+      }
+
+  }
 }
 
 #banker_signin_button {

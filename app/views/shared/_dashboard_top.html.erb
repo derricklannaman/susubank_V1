@@ -1,12 +1,16 @@
 <!-- DASHBOARD_TOP -->
 
 <div class="intro_bar">
-  <h1>Dashboard</h1> <%= get_todays_date %>
-  <p><%= "Welcome #{@authenticated_user.first_name} #{@authenticated_user.last_name}"%></p>
-
-
+<h1>Dashboard</h1>
+  <p class="date">
+    <%= get_todays_date %>
+  </p>
+  <div class="clear"></div>
+  <p class="welcome">
+    <%= "Welcome #{@authenticated_user.first_name} #{@authenticated_user.last_name}"%>
+  </p>
   <ul>
-    <li><%= link_to "Get Stats", stats_path %>  </li>
+    <li class="stat_nav"><%= link_to "Get Stats", stats_path %></li>
   </ul>
 </div>
 <hr>

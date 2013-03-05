@@ -46,7 +46,15 @@ $shadow_sharpest: 1px 1px 2px #000;
   text-shadow:  0px 0px 6px #000;
 }
 
-
+@mixin box_inset {
+  background: rgba(244, 246, 247, 1)!important;
+  border-radius: 10px;
+  border-bottom: 2px solid #FFF!important;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top-width: 1px;
+  box-shadow: inset 0 23px 5px -23px #999;
+}
 
 @mixin faint_border {
   border: 1px solid #CCC;
