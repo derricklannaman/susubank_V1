@@ -1,7 +1,7 @@
 <!-- DASHBOARD_TOP -->
 
 <div class="intro_bar">
-<h1>Dashboard</h1>
+<h1>Overview</h1>
   <p class="date">
     <%= get_todays_date %>
   </p>
@@ -10,7 +10,7 @@
     <%= "Welcome #{@authenticated_user.first_name} #{@authenticated_user.last_name}"%>
   </p>
   <ul>
-    <li class="stat_nav"><%= link_to "Get Stats", stats_path %></li>
+    <li class="stat_nav"><%= link_to "Get stats", stats_path %></li>
   </ul>
 </div>
 <hr>

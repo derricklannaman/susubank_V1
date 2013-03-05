@@ -5,10 +5,19 @@ $(function(){
   $('#calculate_button').on('click', show_susu_create_button);
   // SUSU VIEW
   $('.member_info_box, button').on('click', function(){
-         $(this).parents('.member_box')
+       $(this).parents('.member_box')
                 .children('.member_info_box')
-                .slideToggle("swing");
+                  .slideToggle("swing");
     });
+
+    $('dd').filter(':nth-child(n+4)').hide();
+    $('dl').on('mouseenter', 'dt', function(){
+        $(this).next()
+              .slideDown(400)
+              .siblings('dd')
+                  .slideUp(400);
+    })
+
 
 
 });
@@ -22,3 +31,19 @@ function show_form() {
   $('.all_susu_panel').hide(100);
   $('#susu_builder_form').fadeIn(200);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

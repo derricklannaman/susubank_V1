@@ -83,7 +83,16 @@
         text-decoration:  none;
         color: $base_color;
       }
+  }
+}
 
+.stat_intro {
+  height: 40px;
+  margin-left: 21px;
+  color:  #999;
+  @include box_inset;
+  h3 {
+    margin-left:  400px;
   }
 }
 
@@ -99,6 +108,7 @@
     color: $base_color;
   }
 }
+
 
 
 
