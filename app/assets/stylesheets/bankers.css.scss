@@ -87,8 +87,9 @@
 }
 
 .stat_intro {
+  width: 960px;
   height: 40px;
-  margin-left: 21px;
+  margin-left: 6px!important;
   color:  #999;
   @include box_inset;
   h3 {

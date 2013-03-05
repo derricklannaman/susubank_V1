@@ -3,9 +3,12 @@
 </div>
 
 <div class="box_score">
-
   <div class="data_group">
-    <%= "Member Since : #{member_since}"   %>
+  <h5 class="snapshot">Snapshot</h5>
+  <div class="clear"></div>
+    <p>
+      <%= "Banker Since : #{member_since}" %>
+    </p>
     <p>
       <%= "The total value of all susus you created : #{number_to_currency(total_value_of_a_bankers_susus)}" %>
     </p>
@@ -21,9 +24,38 @@
     <p>
       <%= "Average number of members : #{avg_number_of_members(total_number_of_members, total_number_of_susus )}" %>
     </p>
-  </div>
+  </div><!-- End data_group -->
+
+  <div class="data_group">
+  <h5 class="snapshot">Top 5 Susus</h5>
+    <div class="button_plate">
+      <div class="snapshop_button">
+        <div id="shine"></div>
+      </div>
+    </div>
+  </div><!-- End data_group -->
+
+  <div class="data_group">
+  <h5 class="snapshot">Snapshot</h5>
+    <div class="button_plate">
+      <div class="snapshop_button">
+        <div id="shine"></div>
+      </div>
+    </div>
+  </div><!-- End data_group -->
+
+  <div class="data_group">
+  <h5 class="snapshot">Compare against all susus</h5>
+    <div class="button_plate">
+      <div class="snapshop_button">
+        <div id="shine"></div>
+      </div>
+    </div>
+  </div><!-- End data_group -->
+
 </div><!-- End box_score -->
 
 <div class="box_score">
+
 </div>
 
