@@ -18,6 +18,12 @@ $(function(){
                   .slideUp(400);
     })
 
+    $('.button_plate').on('click', (function(){
+          var $this = $(this).parent();
+          $this.prevUntil('.data_group').slideToggle(1000);
+          $this.nextUntil('.box_score').slideToggle(1000);
+
+    }))
 
 
 });

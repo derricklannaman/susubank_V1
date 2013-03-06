@@ -10,13 +10,14 @@ html, body {
 }
 
 .hero-unit {
-  background: url('random_grey_variations.png');
+  background: url('bright_squares.png');
+  box-shadow: $base_box_shadow;
 }
 
 #hero {
   padding-left: 150px;
   color:  orange;
-  text-shadow:  $shadow_sharp;
+  text-shadow:  $shadow_sharpest;
   h3 {
     color:  orange;
     font-size: 22px;
@@ -26,7 +27,6 @@ html, body {
 }
 
 .wrapper {
-  /*min-height: 100%;*/
   width: auto !important;
   height: 100%;
   margin: 0 auto -4em;
@@ -151,7 +151,12 @@ hr:before {
   width: 290px;
   height: 300px;
   margin: 10px;
-  background: url('random_grey_variations.png');
+  background: url('bright_squares.png');
+  box-shadow: $base_box_shadow;
+}
+
+#midsection {
+  height: 100px;
 }
 
 /* FORMS */
