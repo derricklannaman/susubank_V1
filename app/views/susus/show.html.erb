@@ -2,26 +2,26 @@
 
 <div class="susu_full_view">
   <div class="susu_title">
-    <p><%= @susu.name %></p>
+    <h3><p><%= @susu.name %></p></h3>
   </div>
   <div class="susu_info">
     <div>
-     <p>Members: <%= @susu.num_of_members %></p>
+     <p>Members: <span><%= @susu.num_of_members %></span></p>
     </div>
     <div>
-     <p>Total hand: <%= number_to_currency(@susu.pay_out_amount, :precision => 0) %></p>
+     <p>Total hand:  <span><%= number_to_currency(@susu.pay_out_amount, :precision => 0) %></span></p>
     </div>
     <div>
-     <p>Pay out frequency:<br/><%= @susu.pay_out_rotation %></p>
+     <p>Pay out frequency:  <span><%= @susu.pay_out_rotation %></span></p>
     </div>
     <div>
-     <p>Members pay in:<br/><%= @susu.member_pay_in_frequency %></p>
+     <p>Members pay in:  <span><%= @susu.member_pay_in_frequency %></span></p>
     </div>
     <div>
-     <p>Contribution amount: <%= @susu.pay_in_amount %></p>
+     <p>Contribution amount:  <span><%= number_to_currency(@susu.pay_in_amount, precision: 0) %></span></p>
     </div>
     <div>
-     <p>Susu Duration: <%= "#{@susu.length} weeks" %></p>
+     <p>Susu Duration:  <span><%= "#{@susu.length} weeks" %></span></p>
     </div>
 
   </div><!-- End susu_view -->

@@ -2,7 +2,7 @@
 <% @susus.each do |susu| %>
 <div class="susu_box">
   <ul>
-    <li><span><%= susu.name %></span></li>
+    <li><span><%= link_to "#{susu.name}", banker_susu_path(@authenticated_user, susu) %></span></li>
     <hr>
     <li>Members: <%= susu.num_of_members %></li>
     <li>Payout: <%= number_to_currency(susu.pay_out_amount, :precision => 0) %></li>

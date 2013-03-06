@@ -6,6 +6,7 @@ $error_color: rgba(209,0,0,1);
 $shadow_sharp: 1px 1px 4px #000;
 $shadow_sharpest: 1px 1px 2px #000;
 
+
 /*Buttons styles*/
 
 @mixin fat_orange_stelo {
@@ -23,6 +24,13 @@ $shadow_sharpest: 1px 1px 2px #000;
 }
 
 /* Mixins */
+
+@mixin base_font {
+  color:#666;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
 
 @mixin notify {
   padding: 10px;
