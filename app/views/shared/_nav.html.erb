@@ -2,26 +2,24 @@
   <div id="nav_border_bar">
   </div>
 </div>
-
-
 <div class="nav_wrapper">
-    <div id="brand">
+  <div id="brand">
+    <% if @authenticated_user %>
+      <%= link_to "Susu::Bank", banker_path(@authenticated_user) %>
+    <% else %>
+      <%= link_to "Susu::Bank", root_path %>
+    <% end %>
+  </div>
+  <nav class="pull-right">
+    <ul id="main_nav">
+      <li><%= link_to "home",         root_path %></li>
+      <li><%= link_to "how it works", how_it_works_path %></li>
+      <li><%= link_to "susu 101",     susu101_path %></li>
+      <li><%= link_to "about",        about_path %></li>
       <% if @authenticated_user %>
-        <%= link_to "Susu::Bank", banker_path(@authenticated_user) %>
-      <% else %>
-        <%= link_to "Susu::Bank", root_path %>
+      <li><%= link_to "dashboard", banker_path(@authenticated_user) %></li>
       <% end %>
-    </div>
-    <nav class="pull-right">
-      <ul id="main_nav">
-        <li><%= link_to "home",         root_path %></li>
-        <li><%= link_to "how it works", how_it_works_path %></li>
-        <li><%= link_to "susu 101",     susu101_path %></li>
-        <li><%= link_to "about",        about_path %></li>
-        <% if @authenticated_user %>
-        <li><%= link_to "dashboard", banker_path(@authenticated_user) %></li>
-        <% end %>
-        <li><%= signed_in %></li>
-      </ul>
-    </nav>
+      <li><%= signed_in %></li>
+    </ul>
+  </nav>
 </div>

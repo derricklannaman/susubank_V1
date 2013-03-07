@@ -20,7 +20,7 @@ Susubank::Application.routes.draw do
 
 
   post '/susubuilder' => 'bankers#susubuilder'
-  # get '/calculate' => 'bankers#calculate'
+  get '/calculate' => 'bankers#calculate'
   # get '/prepopulate_new_susu_form' => 'susus#prepopulate_new_susu_form'
 
 

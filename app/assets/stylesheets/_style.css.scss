@@ -56,7 +56,8 @@ $base_box_shadow: 0px 0px 15px 0px #999;
 }
 
 @mixin box_inset {
-  background: rgba(244, 246, 247, 1)!important;
+  /*background: rgba(244, 246, 247, 1);*/
+  background: #F1F6F3;
   border-radius: 10px;
   border-bottom: 2px solid #FFF!important;
   border-left: 1px solid #ddd;

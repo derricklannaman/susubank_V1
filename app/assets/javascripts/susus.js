@@ -29,7 +29,6 @@ $(function(){
             $this.prevUntil('.data_group').slideToggle(700);
             $this.nextUntil('.box_score').slideToggle(700);
               global_stats.delay(500).fadeToggle(330);
-
     })
     // Animate opening tag on page load
       var opening_tag = $('#opening_tag');

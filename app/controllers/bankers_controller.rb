@@ -118,6 +118,7 @@ class BankersController < ApplicationController
 
 
   def calculate
+    raise params.inspect
   end
 
 
