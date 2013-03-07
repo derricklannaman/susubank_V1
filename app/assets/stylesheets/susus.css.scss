@@ -65,7 +65,7 @@
           font-weight: bold;
           text-shadow: shadow_sharpest;
         }
-    }
+      }
 }
 
 #dashboard_create_susu_button {
@@ -165,8 +165,6 @@
   @include box_inset;
 }
 
-
-
 .snapshot {
   float:  left;
   width:  330px;
@@ -179,7 +177,6 @@
   @include hr_fade_notice;
   text-shadow:  $shadow_sharpest;
 }
-
 
 .snapshop_button {
   cursor: pointer;

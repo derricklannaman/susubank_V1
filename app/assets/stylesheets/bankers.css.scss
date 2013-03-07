@@ -74,14 +74,15 @@
       list-style-type: none;
       color:  #999;
       &:hover {
-        -moz-transition: all 0.5s ease-in-out;
-        -webkit-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
-        background: #FFF;
+        -moz-transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background: #BDF7BA;
         padding: 7px;
         border-radius: 6px;
         text-decoration:  none;
-        color: $base_color;
+        color: #FFF;
+        text-shadow: $shadow_sharpest;
       }
   }
 }

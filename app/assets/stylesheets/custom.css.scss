@@ -9,12 +9,27 @@ html, body {
   background: url('handmadepaper.png');
 }
 
+#opening_tag {
+  width:  800px;
+  height:  100px;
+  position: absolute;
+  left: 250px;
+
+}
+.tag_opacity {
+  opacity: 0.3;
+}
+.open_fade_in {
+  opacity: 1;
+}
+
 .hero-unit {
   background: url('bright_squares.png');
   box-shadow: $base_box_shadow;
 }
 
 #hero {
+  min-height: 200px;
   padding-left: 150px;
   color:  orange;
   text-shadow:  $shadow_sharpest;
@@ -118,9 +133,13 @@ hr:before {
     font-size: 16px;
     text-shadow:  none;
     &:hover {
+      -moz-transition: all 0.1s ease-in-out;
+      -webkit-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
       color:  #FFF;
       text-decoration: none;
       text-shadow:  none;
+      border-bottom: 2px solid $base_color;
     }
   }
 }
@@ -170,6 +189,7 @@ hr:before {
     text-align: center;
     color:  #FFF;
     @include letter_shadow;
+    @include title_bar_style;
     }
 }
 

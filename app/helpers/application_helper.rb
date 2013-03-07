@@ -48,19 +48,23 @@ module ApplicationHelper
     today.strftime('%m/%d/%Y')
   end
 
-  # Stats for susus
+  # Stats for Banker's susus
+
+  def avg_susu_duration_per_banker(total_susus)
+    @authenticated_user.susus.map(&:length).inject(:+) / total_susus_global
+  end
 
   def total_value_of_a_bankers_susus
     @authenticated_user.susus.map(&:pay_out_amount).reduce(:+)
   end
 
-  def total_number_of_susus
+  def total_susus_per_banker
     @authenticated_user.susus.count
   end
 
   def avg_susu_dollar_value(number_of_susus)
     dollar_value = @authenticated_user.susus.map(&:pay_out_amount).reduce(:+)
-    dollar_value / total_number_of_susus
+    dollar_value / total_susus_per_banker
   end
 
   def total_number_of_members
@@ -68,10 +72,31 @@ module ApplicationHelper
   end
 
   def avg_number_of_members(total_members, number_of_susus)
-    total_number_of_members / total_number_of_susus
+    total_number_of_members / total_susus_per_banker
   end
 
+  # Global Stats across platform
 
+  def total_susus_global
+    susus = Susu.all.count
+  end
+
+  def average_members_global(total_susus_global)
+    members = Member.all.count
+    members / total_susus_global
+  end
+
+  def avg_value_all_susus(total_susus)
+    susus = Susu.all
+    value = susus.map {|susu| susu[:pay_out_amount].to_i}
+    value.reduce(:+) / total_susus_global
+  end
+
+  def avg_susu_duration_global(total_susus)
+    susus = Susu.all
+    duration = susus.map{|susu| susu[:length]}
+    duration.reduce(:+) / total_susus_global
+  end
 
 
 end

@@ -16,16 +16,19 @@
       <%= "The total value of all susus you created : #{number_to_currency(total_value_of_a_bankers_susus)}" %>
     </p>
     <p>
-      <%= "Total # of susus created : #{total_number_of_susus}" %>
+      <%= "Total # of susus created : #{total_susus_per_banker}" %>
     </p>
     <p>
-      <%= "Average susu value : #{number_to_currency(avg_susu_dollar_value(total_number_of_susus))}" %>
+      <%= "Average susu value : #{number_to_currency(avg_susu_dollar_value(total_susus_per_banker))}" %>
     </p>
     <p>
       <%= "Total number of members : #{total_number_of_members}" %>
     </p>
     <p>
-      <%= "Average number of members : #{avg_number_of_members(total_number_of_members, total_number_of_susus )}" %>
+      <%= "Average number of members : #{avg_number_of_members(total_number_of_members, total_susus_per_banker )}" %>
+    </p>
+    <p>
+      <%= "Average duration of susu : #{avg_susu_duration_per_banker(total_susus_global)} weeks" %>
     </p>
   </div><!-- End data_group -->
 
@@ -55,6 +58,19 @@
         <div id="shine"></div>
       </div>
     </div>
+    <!-- Compare against all susus -->
+    <div class="global_stats">
+      <p>
+        <%= "Current average value of all susus : #{number_to_currency(avg_value_all_susus(total_susus_global), precision: 0)}" %>
+      </p>
+      <p>
+        <%= "Average number of members : #{average_members_global(total_susus_global).to_f}" %>
+      </p>
+      <p>
+        <%= "Average duration of all susus : #{avg_susu_duration_global(total_susus_global)} weeks"%>
+      </p>
+    </div>
+
   </div><!-- End data_group -->
 
 </div><!-- End box_score -->
