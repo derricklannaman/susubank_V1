@@ -40,8 +40,8 @@ $(function(){
       });
 
     // Makes member list sortable by dragging
-      $('#order_members').sortable();
-      $('#order_members').disableSelection();
+      $('#sort_members').sortable();
+      $('#sort_members').disableSelection();
 
 
 });
