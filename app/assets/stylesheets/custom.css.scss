@@ -10,6 +10,11 @@ html, body {
   background: url('bg_green.png');
 }
 
+ol {
+  font-size: 15px;
+  color:  $base_color;
+}
+
 #opening_tag {
   width:  800px;
   height:  100px;
