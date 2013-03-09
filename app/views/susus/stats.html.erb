@@ -42,14 +42,14 @@
     </div>
   </div><!-- End data_group -->
 
-  <div class="data_group_2">
+<!--   <div class="data_group_2">
   <h5 class="snapshot">Snapshot</h5>
     <div class="button_plate">
       <div class="snapshop_button">
         <div id="shine"></div>
       </div>
-    </div>
-  </div><!-- End data_group -->
+    </div> -->
+  <!-- </div>End data_group -->
 
   <div class="data_group_2">
   <h5 class="snapshot">Compare against all susus</h5>
@@ -61,7 +61,7 @@
     <!-- Compare against all susus -->
     <div class="global_stats">
       <p>
-        <%= "Current average value of all susus : #{number_to_currency(avg_value_all_susus(total_susus_global), precision: 0)}" %>
+        <%= "Average value of all susus : #{number_to_currency(avg_value_all_susus(total_susus_global), precision: 0)}" %>
       </p>
       <p>
         <%= "Average number of members : #{average_members_global(total_susus_global).to_f}" %>

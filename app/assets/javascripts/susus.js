@@ -18,8 +18,8 @@ $(function(){
       $(this).next()
           .slideDown(400)
             .siblings('dd')
-              .slideUp(400);
-    })
+              .slideUp(400)
+    });
 
     // Animates buttons on the stats page when clicked
     $('.button_plate').on('click', function(){

@@ -1,5 +1,7 @@
 <!-- MEMBER INDEX PARTIAL RENDERING ON SUSU SHOW PAGE -->
+
 <% @members.each do |member| %>
+<li>
   <div class="member_box">
     <p><%= member.first_name %> <%= member.last_name %></p>
     <button class="member_info_button">
@@ -23,4 +25,6 @@
       </div>
     </div><!-- End member_info_box -->
 </div><!-- End member_box -->
+</li>
 <% end %>
+

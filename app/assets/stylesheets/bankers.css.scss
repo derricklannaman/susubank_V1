@@ -24,16 +24,18 @@
       margin: 4px 4px;
       list-style-type: none;
       background: $base_color;
+      box-shadow: 0px 0px 2px 1px #BBB;
       }
       a {
         display: block;
-        color:  #5DD577;
+        color:  #666;
         text-decoration: none;
         padding:  10px 10px;
         text-align: center;
+        @include bg_gradient;
       }
       :hover {
-        color:  #FFF;
+        color:  $base_color;
       }
 }
 
