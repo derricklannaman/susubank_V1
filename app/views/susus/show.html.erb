@@ -29,16 +29,20 @@
 </div><!-- End susu_full_view -->
 
 
-    <div class="member_panel">
-    <div class="sort_members_header">
-     <p>
-      <span>Arrange member order: </span><br/>(by dragging and dropping)
-     </p>
-    </div>
-      <ol id="sort_members">
-        <%= render 'members/members' %>
-      </ol>
-    </div>
+<div class="member_panel">
+  <div class="sort_members_header">
+   <p>
+    <span>Arrange member order: </span><br/>(by dragging and dropping)
+   </p>
+  </div>
+  <div class="lock">
+    <%= label_tag(:lock, "Lock members in place?") %>
+    <%= check_box_tag(:lock) %>
+  </div>
+  <ol id="sort_members">
+    <%= render 'members/members' %>
+  </ol>
+</div>
 
 
 

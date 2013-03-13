@@ -1,26 +1,20 @@
-development:
+common: &common
   adapter: postgresql
   encoding: unicode
-  database: susubank_development
   host: localhost
   pool: 5
   username: postgres
   password: mateo525
 
-test:
-  adapter: postgresql
-  encoding: unicode
+development:
+  <<: *common
   database: susubank_development
-  host: localhost
-  pool: 5
-  username: postgres
-  password: mateo525
+
+test: &test
+  <<: *common
+  database: susubank_test
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: susubank_development
-  host: localhost
-  pool: 5
-  username: postgres
-  password: mateo525
+  <<: *common
+  database: susubank_production
+
