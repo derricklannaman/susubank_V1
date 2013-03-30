@@ -2,6 +2,7 @@
 
 /*Colors*/
 $base_color: #17B10C;
+$form_base_color: DDD;
 $error_color: rgba(209,0,0,1);
 $shadow_sharp: 1px 1px 4px #000;
 $shadow_sharpest: 1px 1px 2px #000;
@@ -47,7 +48,7 @@ $base_box_shadow: 0px 0px 15px 0px #999;
 }
 
 @mixin form_bg_gradient {
-    background: -webkit-gradient(radial, center center, 6, center center, 800, from(#FFF), to($base_color));
+    background: -webkit-gradient(radial, center center, 6, center center, 800, from(#FFF), to($form_base_color));
     box-shadow: 0px 0px 40px -10px #333;
 }
 
@@ -56,7 +57,6 @@ $base_box_shadow: 0px 0px 15px 0px #999;
 }
 
 @mixin box_inset {
-  /*background: rgba(244, 246, 247, 1);*/
   background: #F1F6F3;
   border-radius: 10px;
   border-bottom: 2px solid #FFF!important;

@@ -37,6 +37,16 @@
   @include box_inset;
 }
 
+.box_inset_horizontal {
+  float:  left;
+  width: 712px;
+  height: 340px!important;
+  padding-top:  20px;
+  @include box_inset;
+}
+
+
+
 /* INDIVIDUAL SUSU BOX ON BANKER PAGE*/
 .susu_box {
   float:  left;
