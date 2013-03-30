@@ -13,5 +13,5 @@ class ApplicationController < ActionController::Base
       @authenticated_user = nil
     end
   end
-
+  # helper_method :authenticate_user
 end
