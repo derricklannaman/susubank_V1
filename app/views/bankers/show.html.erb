@@ -6,115 +6,12 @@
 
 <div class="main_dashboard_container">
 
-<!-- <div class="form" id="susu_builder_form"> -->
-  <!-- <div class="title_bar"> -->
-    <!-- <h3>susuBuilder</h3> -->
-    <!-- <p>Use susubuilder to experiment with putting your susu together.</p> -->
-  <!-- </div> -->
-
-  <%#= form_tag '/susubuilder', id: 'susu_form', :remote => true do %>
-
-  <!-- <div class="form_field_group"> -->
-      <!-- <div> -->
-        <%#= label :name, "Name your susu" %>
-        <%#= text_field_tag :name, 'Enter your susu name', autofocus: true %>
-      <!-- </div> -->
-      <!-- <div> -->
-        <%#= label :name, 'Total payout' %>
-        <%#= text_field_tag :pay_out, nil, :placeholder => '$0' %>
-      <!-- </div> -->
-    <!-- <div> -->
-      <!-- Members:<br/> -->
-      <%#= number_field_tag 'num_of_members', nil, :in => 3...31, placeholder: 'Enter number of members here' %>
-    <!-- </div> -->
-    <!-- <div> -->
-      <!-- Members pay in:<br/> -->
-      <%#= select_tag 'pay_in_freq', (options_for_select([['weekly', 1], ['every 2 weeks', 2], ['monthly', 3]])) %>
-    <!-- </div> -->
-    <!-- <div> -->
-      <!-- Full Hand pay out:<br/> -->
-      <%#= select_tag 'pay_out_freq', (options_for_select([['weekly', 1], ['every 2 weeks', 2], ['monthly', 3] ])) %>
-    <!-- </div> -->
-    <!-- <div> -->
-      <!-- Member contribution:<br/> -->
-      <%#= text_field_tag 'member_contribution', 'calculate automatically', :disabled => true %>
-    <!-- </div> -->
-    <!-- <div> -->
-      <!-- Susu duration:<br/> -->
-      <%#= text_field_tag 'duration', 'calculate automatically', :disabled => true %>
-    <!-- </div> -->
-    <!-- <div> -->
-      <%#= submit_tag 'Calculate', id: 'calculate_button', :remote => true %>
-      <!-- <button id="calculate_button">Calculate</button> -->
-    <!-- </div> -->
-
-    <!-- <div> -->
-      <!-- <button id="dashboard_create_susu_button" > -->
-        <%#= link_to "Create Susu", new_banker_susu_path(@banker), id: "dynamic_create_button" %> <!-- this will post directly to the create method, but doesnt carry over inputted data -->
-      <!-- </button> -->
-      <%# end %>
-    <!-- </div> -->
-  <!-- </div>End form_field_group -->
-
-<!-- </div> -->
-
-<!-- <div id="calculations"></div> -->
-<!-- ========================================
-========================================
- -->
-
 <div class="form" id="susu_builder_form">
   <div class="title_bar">
     <h3>susuBuilder</h3>
   </div>
 
- <%= form_tag '/susubuilder', id: 'susu_form' do %>
 
-  <div class="form_field_group">
-      <div>
-        <%= label :name, "Name your susu" %>
-        <%= text_field_tag :name, 'Enter your susu name', autofocus: true %>
-      </div>
-      <div>
-        <%= label :name, 'Total payout' %>
-        <%= text_field_tag :pay_out, nil, :placeholder => '$0' %>
-      </div>
-    <div>
-      Members:<br/>
-      <%= number_field_tag 'num_of_members', nil, :in => 3...31, placeholder: 'Enter number of members here' %>
-    </div>
-    <div>
-      Members pay in:<br/>
-      <%= select_tag 'pay_in_freq', (options_for_select([['weekly', 1], ['every 2 weeks', 2], ['monthly', 3]])) %>
-    </div>
-    <div>
-      Full Hand pay out:<br/>
-      <%= select_tag 'pay_out_freq', (options_for_select([['weekly', 1], ['every 2 weeks', 2], ['monthly', 3] ])) %>
-    </div>
-    <div>
-      Member contribution:<br/>
-      <%= text_field_tag 'member_contribution', 'calculate automatically', :disabled => true %>
-    </div>
-    <div>
-      Susu duration:<br/>
-      <%= text_field_tag 'duration', 'calculate automatically', :disabled => true %>
-    </div>
-    <div>
-      <%= button_to 'Calculate', id: 'calculate_button', method: :post, :remote => true %>
-      <!-- <button id="calculate_button">Calculate</button> -->
-    </div>
-
-    <div>
-      <button id="dashboard_create_susu_button" >
-        <%= link_to "Create Susu", new_banker_susu_path(@banker), id: "dynamic_create_button" %> <!-- this will post directly to the create method, but doesnt carry over inputted data -->
-      </button>
-      <% end %>
-    </div>
-  </div><!-- End form_field_group -->
-
-</div>
-
-<div id="calculations"></div>
 
 
 

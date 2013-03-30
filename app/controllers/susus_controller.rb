@@ -49,7 +49,9 @@ class SususController < ApplicationController
     redirect_to banker_path(@banker)
   end
 
-
+  def calculate
+    render :text => "hello world"
+  end
 
 # private
   def stats

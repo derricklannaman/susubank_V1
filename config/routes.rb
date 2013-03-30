@@ -1,5 +1,9 @@
 Susubank::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   root to: 'info#index'
 
   # sessions
@@ -12,21 +16,23 @@ Susubank::Application.routes.draw do
     get page, controller: 'info', action: page
   end
 
-  # messaging with twilio
+  # sign in with facebook thru omniauth
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  # match 'signout', to: 'session#destroy', as: 'signout'
+
+  # send text message to members with twilio
   get '/twilio' => 'susus#show'
   post '/twilio' => 'twilio#create'
 
   match "/stats" => 'susus#stats', via: :get
 
-
-  post '/susubuilder' => 'bankers#susubuilder'
-  get '/calculate' => 'bankers#calculate'
-  # get '/prepopulate_new_susu_form' => 'susus#prepopulate_new_susu_form'
-
-
   resources :bankers do
     resources :susus
   end
+
+  match '/calculate' => 'susus#calculate', as: 'calculate'
+
 
   resources :susus do
     resources :members

@@ -5,7 +5,8 @@ $(function(){
   $('#builder_button').on('click', show_form);
   $('#calculate_button').on('click', show_susu_create_button);
   // SUSU VIEW
-  $('button.member_info_button').on('click', function(){
+  // $('button.member_info_button').on('click', function(){
+  $('.member_info_button').on('click', function(){
       var member_info = $(this);
        member_info.parents('.member_box')
                 .children('.member_info_box')
@@ -40,9 +41,14 @@ $(function(){
       });
 
     // Makes member list sortable by dragging
+      // var sort_members = $('#sort_members');
       $('#sort_members').sortable();
       $('#sort_members').disableSelection();
+      // $('.member_box').draggable('#sort_members');
 
+      $('#lock').on('click', (function(){
+          $('#sort_members').sortable("disable");
+      }))
 
 });
 

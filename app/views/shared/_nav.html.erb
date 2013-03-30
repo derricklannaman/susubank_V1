@@ -20,6 +20,11 @@
       <li><%= link_to "dashboard", banker_path(@authenticated_user) %></li>
       <% end %>
       <li><%= signed_in %></li>
+      <%# if @banker.banker_email == "derricklannaman@gmail.com" %>
+      <!-- <li><%#= link_to "Admin", new_admin_user_session_path %></li> -->
+      <%# else %>
+
+      <%# end %>
     </ul>
   </nav>
 </div>

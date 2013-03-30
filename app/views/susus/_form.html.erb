@@ -1,37 +1,4 @@
-<!-- ADD NEW SUSU -->
-
-<!--
-  This is the susu summary window on the susu new form page
--->
-<!--
-<section class="new_susu_summary">
-  <div class="break_form_small">
-    <%# get_session_info %>
-    <%# @susu_labels.each do |label| %>
-      <%#= label %><br/>
-    <%# end %>
-  </div>
-  <div class="break_form_small">
-    <%# @session_info.each do |info| %>
-      <%#= info %><br/>
-    <%# end %>
-  </div>
-  <div class="break_form_small">
-    Payouts:
-    <%#= how_often_susu_is_paid_out %><br/><! find in application helper -->
-    <!-- Contributions in: -->
-    <%#= how_often_members_contribute_to_susu %>
-  <!-- </div> -->
-<!-- </section> -->
-
-<!--
-  End susu summary window
--->
-
-<!-- NEW SUSU FORM -->
-
 <%= form_for([@authenticated_user, @susu], class: 'signup_signin_form') do |f| %>
-
 <div class='form new_susu_form'>
     <div class="title_bar" id="new_susu_title_bar">
       <h3><%= @form_title %></h3>
@@ -69,17 +36,14 @@
         <%= f.label :length, "Length of susu" %>
         <%= f.text_field :length %>
       </div>
-
-      <%= button_to "calculate"    %>
-
       <div>
-        <%= f.submit %>
+        <%= f.submit id: "new_susu_submit_button" %>
       </div>
     </div><!-- End break_form -->
   <% end %>
   </div><!-- End form_without_title -->
 
-    <div id="calculations"></div>
+  <div id="calculations"></div>
 
 
 

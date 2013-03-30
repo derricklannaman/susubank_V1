@@ -1,0 +1,17 @@
+$('#calculations').empty();
+$('.susu_box').hide();
+$('.all_susu_panel').removeClass('add_susu_panel')
+                      .addClass('box_inset_horizontal')
+                        .append("<%= j render 'susus/form' %>")
+                          .append("<%= j link_to 'Calculate', remote: true, id: 'calculate_button' %>")
+
+$('#new_susu_submit_button').hide();
+
+
+
+
+
+
+
+
+
