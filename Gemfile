@@ -15,6 +15,10 @@ gem 'bcrypt-ruby'
 gem 'jquery-rails'
 gem 'haml'
 gem 'thin'
+gem 'omniauth-facebook'
+gem 'activeadmin'
+gem 'meta_search'
+
 
 group :development do
   gem 'pry-rails'
@@ -27,6 +31,7 @@ group :development do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'meta_request'
 end
 
 group :assets do
