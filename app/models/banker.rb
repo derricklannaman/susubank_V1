@@ -18,21 +18,19 @@
 #
 
 class Banker < ActiveRecord::Base
-
   has_secure_password
   has_many :susus, dependent: :destroy
 
-
   validates :banker_email, presence: true
 
-  # def self.from_omniauth(auth)
-  #   where(auth.slice(:provider, :uid)).first_or_initialize.tap do |banker|
-  #     banker.provider = auth.provider
-  #     banker.uid = auth.uid
-  #     banker.first_name = auth.info.name
-  #     banker.oauth_token = auth.credentials.token
-  #     banker.oauth_expires_at = Time.at(auth.credentials.expires_at)
-  #     banker.save!
-  #   end
-  # end
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |banker|
+      banker.provider = auth.provider
+      banker.uid = auth.uid
+      banker.first_name = auth.info.name
+      banker.oauth_token = auth.credentials.token
+      banker.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      banker.save!
+    end
+  end
 end

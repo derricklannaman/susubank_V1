@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # def current_user
+  #   @current_user = Banker.find(session[:user_id]) if session[:user_id]
+  # end
+
   def authenticate_user
     if session[:user_id]
       @authenticated_user = Banker.find(session[:user_id])
@@ -13,5 +17,6 @@ class ApplicationController < ActionController::Base
       @authenticated_user = nil
     end
   end
-  # helper_method :authenticate_user
+   helper_method :authenticate_user
+   # helper_method :current_user
 end

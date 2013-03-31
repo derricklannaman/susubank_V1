@@ -1,7 +1,4 @@
 class InfoController < ApplicationController
-
-# static pages
-
   def index
   end
 
