@@ -6,20 +6,21 @@ Susubank::Application.routes.draw do
 
   root to: 'info#index'
 
-  # sessions
-  get   '/signin'   => 'sessions#new'
-  post  '/signin'   => 'sessions#create'
-  get   '/signout'  => 'sessions#destroy'
-
   #loops thru info pages in home controller
   %w(how_it_works susu101 about).each do |page|
     get page, controller: 'info', action: page
   end
 
+  # sessions
+  get   '/signin'   => 'sessions#new'
+  post  '/signin'   => 'sessions#create'
+  get   '/signout'  => 'sessions#destroy'
+
+
   # sign in with facebook thru omniauth
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
-  # match 'signout', to: 'session#destroy', as: 'signout'
+  match 'signout', to: 'session#destroy', as: 'signout'
 
   # send text message to members with twilio
   get '/twilio' => 'susus#show'
@@ -37,7 +38,6 @@ Susubank::Application.routes.draw do
   resources :susus do
     resources :members
       member do
-        # get :randomize
       end
   end
 
