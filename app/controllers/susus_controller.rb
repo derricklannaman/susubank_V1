@@ -6,13 +6,12 @@ class SususController < ApplicationController
   end
 
   def new
-    @banker = Banker.find(params[:banker_id])
+    find_banker
     @susu = Susu.new(params[:susu])
     @form_title = "+ new Susu"
   end
 
   def create
-    # raise params.inspect
     @susu = @authenticated_user.susus.new(params[:susu])
     if @susu.save
       redirect_to banker_susu_path(@authenticated_user, @susu), notice: "#{@susu.name} has been created"
@@ -24,38 +23,47 @@ class SususController < ApplicationController
   end
 
   def show
-    @susu = Susu.find(params[:id])
+    find_susu
     @members = @susu.members
-    @banker = @authenticated_user
+    find_banker
   end
 
   def edit
-    @susu = Susu.find(params[:id])
-    @banker = Banker.find(params[:banker_id])
+    find_susu
+    find_banker
     @form_title = "Edit susu info"
   end
 
   def update
-    @susu = Susu.find(params[:id])
-    @banker = @authenticated_user
+    find_susu
+    find_banker
     @susu.update_attributes(params[:susu])
       redirect_to banker_susu_path(@banker, @susu), notice: "Susu updated"
   end
 
   def destroy
-    @banker = Banker.find(params[:banker_id])
+    find_banker
     Susu.find(params[:id]).destroy
     flash[:error] = "Susu deleted"
     redirect_to banker_path(@banker)
   end
 
-  def calculate
-    render :text => "hello world"
-  end
-
-# private
+private
   def stats
   end
+
+  def find_susu
+    @susu = Susu.find(params[:id])
+  end
+
+  def find_banker
+    @banker = @authenticated_user
+  end
+
+  # def form_name(name)
+  #   @form_title = ""
+
+  # end
 
 
 end
