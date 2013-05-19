@@ -98,5 +98,28 @@ module ApplicationHelper
     duration.reduce(:+) / total_susus_global
   end
 
+  # facebook
+  def get_facebook_profile
+    @facebook_profile_picture = @authenticated_user.facebook.get_picture("me", :type => "large")
+  end
+
+  def get_facebook_albums
+    @albums = @authenticated_user.facebook.get_connections("me", "albums")
+  end
+
+  def get_facebook_photos
+    @facebook_photos = @authenticated_user.facebook.get_connections("me", "photos")
+  end
+
+  def signed_in_with_facebook?
+   not @authenticated_user.oauth_token.nil?
+  end
 
 end
+
+
+
+
+
+
+
