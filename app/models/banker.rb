@@ -18,11 +18,12 @@
 #
 
 class Banker < ActiveRecord::Base
-  has_secure_password
+  # has_secure_password
   has_many :susus, dependent: :destroy
 
-  validates :banker_email, presence: true
+  # validates :banker_email, presence: true
 
+# Used for omniauth/facebook
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |banker|
       banker.provider = auth.provider
@@ -33,4 +34,10 @@ class Banker < ActiveRecord::Base
       banker.save!
     end
   end
+
+  def facebook
+   @facebook ||= Koala::Facebook::API.new(oauth_token)
+  end
+
+
 end
