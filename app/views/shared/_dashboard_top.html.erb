@@ -1,13 +1,16 @@
 <!-- DASHBOARD_TOP -->
 
 <div class="intro_bar">
-<h1>Overview</h1>
+  <% get_facebook_profile %>
+  <%= image_tag @facebook_profile_picture, id:"overview_image_from_facebook" %>
+
+  <h1>Overview</h1>
   <p class="date">
     <%= get_todays_date %>
   </p>
   <div class="clear"></div>
   <p class="welcome">
-    <%= "Welcome #{@authenticated_user.first_name} #{@authenticated_user.last_name}"%>
+    <%= "Welcome #{@authenticated_user.first_name}"%>
   </p>
   <ul>
     <li class="stat_nav"><%= link_to "Get stats", stats_path %></li>
