@@ -49,8 +49,10 @@
   h1 {
     float:  left;
     width:  300px;
-    margin-left: 300px;
-    padding-top: 10px;
+    margin-left: 70px;
+    padding-top: 20px;
+    font-size: 70px;
+    color: #BBB;
   }
 }
 
@@ -62,8 +64,10 @@
 }
 
 .welcome {
-  margin-left: -41px;
-  margin-top: -10px;
+  float: left;
+  margin-left: 35px;
+  font-size: 20px;
+  /*margin-top: -10px;*/
 }
 
 .stat_nav {
@@ -111,6 +115,12 @@
   &:hover {
     color: $base_color;
   }
+}
+
+#overview_image_from_facebook {
+  float: left;
+  margin: 20px;
+  border: 8px solid #BBB;
 }
 
 
