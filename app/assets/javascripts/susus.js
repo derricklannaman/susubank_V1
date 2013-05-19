@@ -50,11 +50,18 @@ $(function(){
           $('#sort_members').sortable("disable");
       }))
 
+      $('#work').popover();
+
+      // $('#calculate_button').on('click', function(){
+      //     $('#new_susu_submit_button').show();
+
+      // });
+
 });
 
 
 function show_susu_create_button(){
-  $('#dashboard_create_susu_button').show();
+  $('#new_susu_submit_button').show();
 }
 
 function show_form() {
