@@ -18,6 +18,7 @@ gem 'thin'
 gem 'omniauth-facebook'
 gem 'activeadmin'
 gem 'meta_search'
+gem 'koala'
 
 
 group :development do
