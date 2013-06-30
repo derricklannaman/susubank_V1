@@ -2,7 +2,7 @@
  *= require 'css/bootstrap.css'
  *= require 'admin'
  *= require 'susus'
- *= require 'custom'
+ *= require 'main'
  *= require 'bankers'
  *= require 'members'
  *= require 'sessions'

@@ -1,7 +1,7 @@
 $(function(){
   // SUSU BUILDER
   $('#susu_builder_form, #dashboard_create_susu_button, .member_info_box,\
-     .global_stats').hide();
+     .global_stats, .intro_call_to_action').hide();
   $('#builder_button').on('click', show_form);
   $('#calculate_button').on('click', show_susu_create_button);
   // SUSU VIEW
@@ -36,11 +36,13 @@ $(function(){
       var opening_tag = $('#opening_tag');
       opening_tag.hide();
       $(window).load(function(){
-        opening_tag.removeClass('tag_opacity').addClass('open_fade_in').fadeIn(200);
-        opening_tag.animate({"left": "+=30px"}, 1000);
+        opening_tag.removeClass('tag_opacity').fadeIn(100);
+        opening_tag.animate({"left": "+=70px"}, 1400);
+        $('.intro_call_to_action').delay(1500).slideDown(300);
       });
 
     // Makes member list sortable by dragging
+
       // var sort_members = $('#sort_members');
       $('#sort_members').sortable();
       $('#sort_members').disableSelection();

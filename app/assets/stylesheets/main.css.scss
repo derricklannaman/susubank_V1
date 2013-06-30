@@ -20,8 +20,8 @@ ol {
   height:  100px;
   position: absolute;
   left: 250px;
-
 }
+
 .tag_opacity {
   opacity: 0.3;
 }
@@ -32,6 +32,17 @@ ol {
 .hero-unit {
   background: url('bright_squares.png');
   box-shadow: $base_box_shadow;
+  h1 {
+    color: orange;
+    font-size: 100px;
+    text-shadow:  $shadow_sharpest;
+  }
+  h3 {
+  color:  orange;
+  font-size: 22px;
+  margin-left: 13px;
+  text-shadow:  $shadow_sharpest;
+  }
 }
 
 #hero {
