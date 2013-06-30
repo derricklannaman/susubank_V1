@@ -41,7 +41,7 @@ ol {
   color:  orange;
   font-size: 22px;
   margin-left: 13px;
-  text-shadow:  $shadow_sharpest;
+  /*text-shadow:  $shadow_sharpest;*/
   }
 }
 
@@ -54,7 +54,7 @@ ol {
     color:  orange;
     font-size: 22px;
     margin-left: 13px;
-    text-shadow:  $shadow_sharpest;
+    /*text-shadow:  $shadow_sharpest;*/
   }
 }
 
@@ -266,6 +266,7 @@ hr:before {
 }
 
 .intro_call_to_action {
+  text-shadow: none;
   /*@include fat_orange_stelo*/
 }
 
