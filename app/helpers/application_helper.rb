@@ -100,7 +100,7 @@ module ApplicationHelper
 
   # facebook
   def get_facebook_profile
-    @facebook_profile_picture = @authenticated_user.facebook.get_picture("me", :type => "large")
+    @facebook_profile_picture = @authenticated_user.facebook.get_picture("me", :type => "small")
   end
 
   def get_facebook_albums

@@ -4,7 +4,7 @@
   <% get_facebook_profile %>
   <%= image_tag @facebook_profile_picture, id:"overview_image_from_facebook" %>
 
-  <h1>Overview</h1>
+  <h1>Dashboard: Overview</h1>
   <p class="date">
     <%= get_todays_date %>
   </p>
@@ -12,7 +12,7 @@
   <p class="welcome">
     <%= "Welcome #{@authenticated_user.first_name}"%>
   </p>
-  <ul>
+  <ul id="overview_links">
     <li class="stat_nav"><%= link_to "Get stats", stats_path %></li>
   </ul>
 </div>
