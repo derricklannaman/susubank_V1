@@ -8,7 +8,7 @@ class SususController < ApplicationController
   def new
     find_banker
     @susu = Susu.new(params[:susu])
-    @form_title = "+ new Susu"
+    get_form_title
   end
 
   def create
@@ -16,7 +16,7 @@ class SususController < ApplicationController
     if @susu.save
       redirect_to banker_susu_path(@authenticated_user, @susu), notice: "#{@susu.name} has been created"
     else
-      @form_title = "+ new Susu"
+      get_form_title
       flash.now[:error] = "Your Susu has not been created. Please retry."
       render 'new'
     end
@@ -43,13 +43,17 @@ class SususController < ApplicationController
 
   def destroy
     find_banker
-    Susu.find(params[:id]).destroy
+    find_susu.destroy
     flash[:error] = "Susu deleted"
     redirect_to dashboard_path(@banker)
   end
 
 private
   def stats
+  end
+
+  def get_form_title
+    @form_title = "+ new Susu"
   end
 
   def find_susu
