@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user
 
 
-  private
+  # private
 
   # def current_user
   #   @current_user = Banker.find(session[:user_id]) if session[:user_id]

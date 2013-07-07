@@ -21,4 +21,9 @@ class Susu < ActiveRecord::Base
   belongs_to :banker
 
   validates :name, presence: true
+
+  def self.most_recent_first
+    order('created_at DESC')
+  end
+
 end

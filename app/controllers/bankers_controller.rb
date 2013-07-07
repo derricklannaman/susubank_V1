@@ -6,7 +6,7 @@ class BankersController < ApplicationController
 
   def new
     @banker = Banker.new
-    @form_title = "New Banker"
+    get_form_title
   end
 
   def create
@@ -15,39 +15,55 @@ class BankersController < ApplicationController
       flash[:notice] = "Banker account successfully created."
       redirect_to signin_path
     else
-      @form_title = "New Banker"
+      get_form_title
       flash.now[:error] = "Banker account not created. Please try again."
       render :new
     end
   end
 
-  def dashboard
-    @banker = Banker.find(params[:id])
-    @susus = @banker.susus.order('created_at desc')
-  end
-
   def show
-    @banker = Banker.find(params[:id])
-    @susus = @banker.susus.order('created_at desc')
+    get_banker
+    @susus = @banker.susus.most_recent_first
   end
 
   def edit
-    @banker = Banker.find(params[:id])
+    get_banker
     @form_title = "edit Banker info"
   end
 
   def update
-    @banker = Banker.find(params[:id])
+    get_banker
     @banker.update_attributes(params[:banker])
       flash[:notice] = "Banker account successfully updated."
       redirect_to dashboard_path(@banker)
   end
 
   def destroy
-    @banker = Banker.find(params[:id]).destroy
+    get_banker.destroy
       flash.now[:error] = "Account deleted."
       redirect_to root_path
   end
+
+
+  def dashboard
+    get_banker
+    @susus = @banker.susus.most_recent_first
+  end
+
+
+  private
+
+
+  def get_banker
+    @banker = Banker.find(params[:id])
+  end
+
+  def get_form_title
+    @form_title = "New Banker"
+  end
+
+
+
 
   def susubuilder
     # @susu_name = params[:name]
