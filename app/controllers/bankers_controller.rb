@@ -21,6 +21,11 @@ class BankersController < ApplicationController
     end
   end
 
+  def dashboard
+    @banker = Banker.find(params[:id])
+    @susus = @banker.susus.order('created_at desc')
+  end
+
   def show
     @banker = Banker.find(params[:id])
     @susus = @banker.susus.order('created_at desc')
@@ -35,7 +40,7 @@ class BankersController < ApplicationController
     @banker = Banker.find(params[:id])
     @banker.update_attributes(params[:banker])
       flash[:notice] = "Banker account successfully updated."
-      redirect_to banker_path(@banker)
+      redirect_to dashboard_path(@banker)
   end
 
   def destroy

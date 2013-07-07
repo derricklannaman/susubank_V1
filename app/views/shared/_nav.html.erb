@@ -17,7 +17,7 @@
       <li><%= link_to "susu 101",     susu101_path %></li>
       <li><%= link_to "about",        about_path %></li>
       <% if @authenticated_user %>
-      <li><%= link_to "dashboard", banker_path(@authenticated_user) %></li>
+      <li><%= link_to "dashboard", dashboard_path(@authenticated_user) %></li>
       <% end %>
       <li><%= signed_in %></li>
       <%# if @banker.banker_email == "derricklannaman@gmail.com" %>

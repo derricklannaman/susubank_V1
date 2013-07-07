@@ -4,7 +4,7 @@
 
 <div class="banker_nav_panel">
   <ul>
-    <li><%= link_to "Dashboard", banker_path(@authenticated_user) %></li>
+    <li><%= link_to "Dashboard", dashboard_path(@authenticated_user) %></li>
     <li><%= link_to "Edit Susu", edit_banker_susu_path(@authenticated_user, @susu) %></li>
     <li><%= link_to "add member", new_susu_member_path(@susu) %></li>
     <li><%= link_to "view members", susu_members_path(@susu) %></li>

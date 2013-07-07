@@ -20,7 +20,6 @@
 class Banker < ActiveRecord::Base
   # has_secure_password
   has_many :susus, dependent: :destroy
-
   # validates :banker_email, presence: true
 
 # Used for omniauth/facebook
@@ -38,6 +37,5 @@ class Banker < ActiveRecord::Base
   def facebook
    @facebook ||= Koala::Facebook::API.new(oauth_token)
   end
-
 
 end

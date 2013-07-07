@@ -6,6 +6,6 @@
     <li><%= link_to "Dashboard", banker_susus_path(@authenticated_user) %></li>
     <li><%= link_to "New Susu", new_banker_susu_path(@authenticated_user), remote: true, id: "new_susu_button" %></li>
     <li><%= link_to "edit my profile", edit_banker_path(@authenticated_user) %></li>
-    <li><%= link_to "cancel account", banker_path(@authenticated_user), :method => :delete, data: {confirm: "Are you sure?"} %></li>
+    <li><%= link_to "cancel account", dashboard_path(@authenticated_user), :method => :delete, data: {confirm: "Are you sure?"} %></li>
   </ul>
 </div>

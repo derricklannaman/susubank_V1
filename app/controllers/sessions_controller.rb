@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
     banker = Banker.from_omniauth(env["omniauth.auth"])
     session[:user_id]= banker.id
-    redirect_to banker_path(banker)
+    redirect_to dashboard_path(banker)
   end
 
     # def create

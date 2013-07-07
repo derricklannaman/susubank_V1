@@ -45,7 +45,7 @@ class SususController < ApplicationController
     find_banker
     Susu.find(params[:id]).destroy
     flash[:error] = "Susu deleted"
-    redirect_to banker_path(@banker)
+    redirect_to dashboard_path(@banker)
   end
 
 private
